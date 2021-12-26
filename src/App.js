@@ -52,9 +52,15 @@ function App(props) {
                                 <img src={process.env.PUBLIC_URL + "/Assets/Images/personal_logo3.png"} style={{width: "100%", height: "100%"}}/>
                               </Grid>
                             </Grid>
+                            <Grid xs item className={"typewriter"}>
+                              <p className={"line anim-typewriter"}
+                              >
+                                Welcome!
+                              </p>
+                            </Grid>
                           </Grid>
                         </Grid>
-                        
+
                       </Grid>
                     </Grid>
                 )

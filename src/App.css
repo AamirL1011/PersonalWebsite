@@ -49,3 +49,33 @@ video {
   opacity: 0.80;
   overflow: hidden;
 }
+
+/* Below CSS typewriter effect settings adapted from here: https://css-tricks.com/snippets/css/typewriter-effect/ */
+.line {
+  position: relative;
+  color: #242424;
+  top: 50%;
+  width: 24em;
+  margin: 0 auto;
+  border-right: 2px solid rgba(255,255,255,.75);
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  /* transform: translateY(-50%); */
+}
+
+/* Animation */
+.anim-typewriter{
+  animation: typewriter 3s steps(44) 1s 1 normal both,
+  blinkTextCursor 1000ms steps(44) infinite normal;
+}
+
+@keyframes typewriter{
+  from{width: 0;}
+  to{width: 4.5em;}
+}
+
+@keyframes blinkTextCursor{
+  from{border-right-color: #242424;}
+  to{border-right-color: transparent;}
+}
