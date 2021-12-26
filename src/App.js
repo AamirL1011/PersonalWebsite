@@ -11,9 +11,12 @@ import theme from "./themes";
 
 
 const useStyles = makeStyles((theme) => ({
-  videoBox: {
+  introContainer: {
     justifyContent: "center",
     alignItems: "center",
+  },
+  content: {
+    opacity: "100%"
   }
 }));
 
@@ -36,11 +39,24 @@ function App(props) {
           <Grid>
             {
                 !mainState && (
-                    <Grid>
-                      <Grid container direction={"row"} spacing={1} style={{width: "100vw", height: "100vh"}}>
+                    <Grid style={{backgroundColor: "white", width: "100vw", height: "100vh"}}>
+                      <Grid container justifyContent={"center"} alignItems={"center"}>
                         <video playsInline autoPlay muted loop>
                           <source src={process.env.PUBLIC_URL + "/Assets/Videos/video2.mp4"} type="video/mp4" />
                         </video>
+
+                        <Grid container item xs={12} md={6} style={{zIndex: "50"}} justifyContent={"center"} alignItems={"center"}>
+                          <Grid container item justify={"space-evenly"} alignItems={"center"} >
+                            <Grid xs item>
+                             Hello!
+                            </Grid>
+                            <Grid container item xs={12} justify={"center"}>
+                              <Grid item xs={3}>
+                                <img src={process.env.PUBLIC_URL + "/Assets/Images/personal_logo3.png"} style={{width: "100%", height: "100%"}}/>
+                              </Grid>
+                            </Grid>
+                          </Grid>
+                        </Grid>
                         {/*<Grid item xs={1}>
                           <Grid container direction={"column"} alignItems="center" justify={"center"}>
                             <Grid item>
