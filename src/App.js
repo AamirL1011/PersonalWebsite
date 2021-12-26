@@ -47,30 +47,14 @@ function App(props) {
 
                         <Grid container item xs={12} md={6} style={{zIndex: "50"}} justifyContent={"center"} alignItems={"center"}>
                           <Grid container item justify={"space-evenly"} alignItems={"center"} >
-                            <Grid xs item>
-                             Hello!
-                            </Grid>
-                            <Grid container item xs={12} justify={"center"}>
+                            <Grid container item xs={12} justify={"center"} alignItems={"center"} style={{marginTop: "5%"}}>
                               <Grid item xs={3}>
                                 <img src={process.env.PUBLIC_URL + "/Assets/Images/personal_logo3.png"} style={{width: "100%", height: "100%"}}/>
                               </Grid>
                             </Grid>
                           </Grid>
                         </Grid>
-                        {/*<Grid item xs={1}>
-                          <Grid container direction={"column"} alignItems="center" justify={"center"}>
-                            <Grid item>
-                              Hello World
-                            </Grid>
-                          </Grid>
-                        </Grid>
-
-                        <Grid item xs={23}>
-                          <Grid container direction={"column"} alignItems="center" justify="center">
-
-                          </Grid>
-
-                        </Grid>*/}
+                        
                       </Grid>
                     </Grid>
                 )
