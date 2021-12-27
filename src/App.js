@@ -21,6 +21,18 @@ const useStyles = makeStyles((theme) => ({
   },
   content: {
     opacity: "100% !important"
+  },
+  enterButton: {
+    "&:hover": {
+      "& span": {
+        "& svg": {
+          "& path": {
+            d:
+                "path('m 12 4 l -1.41 1.41 L 16.17 11 H 4 v 2 h 12.17 l -5.58 5.59 L 12 20 l 8 -8 Z')"
+          }
+        }
+      }
+    }
   }
 }));
 
@@ -77,7 +89,10 @@ function App(props) {
                                   </Grid>
                                   <Grid item xs={4} />
                                   <Grid item xs={4} alignItems={"center"} justifyContent={"center"} style={{textAlign: "center"}}>
-                                    <Button variant="outlined" endIcon={<ArrowForwardIosIcon />} style={{textTransform: "none"}}>
+                                    <Button variant="outlined" endIcon={<ArrowForwardIosIcon />}
+                                            style={{textTransform: "none"}}
+                                            className={classes.enterButton}
+                                    onClick={() => updateMainAppState(true)}>
                                       Enter
                                     </Button>
                                   </Grid>
