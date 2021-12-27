@@ -47,23 +47,31 @@ function App(props) {
                           <source src={process.env.PUBLIC_URL + "/Assets/Videos/video2.mp4"} type="video/mp4" />
                         </video>
 
-                        <Grid container item xs={12} md={6} style={{zIndex: "50"}} justifyContent={"center"} alignItems={"center"}>
+                        <Grid container item xs={11} md={5} lg={2} xl={1} style={{zIndex: "50"}} justifyContent={"center"} alignItems={"center"}>
                           <Grid container item justifyContent={"center"} alignItems={"center"} >
-                            <Grid container item className="GreetingBox">
-                              <Box sx={{ flexGrow: 1, background: "rgba(158, 155, 147, 0.8)", padding: "5%", borderRadius: "10px" }}>
-                                <Grid container spacing={2} className={""}>
-                                  <Grid item xs={4}/>
+                            <Grid container item>
+                              <Box sx={{ flexGrow: 1, zIndex: "55", marginBottom: "-5%"}}>
+                                <Grid container spacing={2} justifyContent={"center"} alignItems={"center"} className={""}>
                                   <Grid item xs={4}>
-                                    <Paper style={{background: "rgba(245, 228, 181, 0.8)", padding: "10px", textAlign: "center"}} alignItems={"center"} justifyContent={"center"}>
-                                      <img src={process.env.PUBLIC_URL + "/Assets/Images/personal_logo3.png"} style={{width: "90%", height: "90%"}}/>
+                                    <Paper style={{background: "rgba(158, 155, 147, 0.9)", padding: "5%", textAlign: "center"}} alignItems={"center"} justifyContent={"center"}>
+                                      <img src={process.env.PUBLIC_URL + "/Assets/Images/personal_logo3.png"} style={{width: "100%", height: "100%"}}/>
                                     </Paper>
                                   </Grid>
-                                  <Grid item xs={4}/>
+                                </Grid>
+                              </Box>
+                            </Grid>
+
+                            <Grid container item className="GreetingBox">
+                              <Box sx={{ flexGrow: 1, background: "rgba(227, 207, 161, 0.9)", padding: "5%", borderRadius: "10px" }}>
+                                <Grid container spacing={2} className={""}>
+                                  <Grid item xs={12}></Grid>
+                                  <Grid item xs={12}></Grid>
                                   <Grid item xs={12} className={"typewriter"}>
                                     <Paper>
+                                      Secret Message:
                                       <p className={"line anim-typewriter"}
                                       >
-                                        Welcome!
+                                        Welcome to my page!
                                       </p>
                                     </Paper>
                                   </Grid>
