@@ -69,6 +69,13 @@ video {
     opacity: 100%;
   }
 }
+
+
+.MuiSpeedDial-fab {
+  background-color: #53859e !important;
+  opacity: 0.8;
+}
+
 /* Below CSS typewriter effect settings adapted from here: https://css-tricks.com/snippets/css/typewriter-effect/ */
 .line {
   position: relative;

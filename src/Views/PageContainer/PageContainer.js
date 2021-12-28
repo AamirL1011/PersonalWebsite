@@ -24,6 +24,19 @@ import FilterDramaIcon from '@mui/icons-material/FilterDrama';
 import LaptopMacIcon from '@mui/icons-material/LaptopMac';
 
 
+import SpeedDial from '@mui/material/SpeedDial';
+import SpeedDialIcon from '@mui/material/SpeedDialIcon';
+import SpeedDialAction from '@mui/material/SpeedDialAction';
+import SummarizeIcon from '@mui/icons-material/Summarize';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import GitHubIcon from '@mui/icons-material/GitHub';
+
+const actions = [
+    { icon: <LinkedInIcon />, name: 'LinkedIn' },
+    { icon: <GitHubIcon />, name: 'GitHub' },
+    { icon: <SummarizeIcon />, name: 'Resume' },
+];
+
 export function CustomizedTimeline() {
     return (
         <Timeline position="alternate">
@@ -203,6 +216,22 @@ function PageContainer(props) {
                     </Grid>
                 </Box>
             </Grid>
+            <Box sx={{ height: 320, transform: 'translateZ(0px)', position: "fixed", bottom: 16, right: 16, flexGrow: 1, zIndex: 56 }}>
+                <SpeedDial
+                    ariaLabel="SpeedDial basic example"
+                    sx={{}}
+                    icon={<SpeedDialIcon />}
+                >
+                    {actions.map((action) => (
+                        <SpeedDialAction
+                            key={action.name}
+                            icon={action.icon}
+                            tooltipTitle={action.name}
+                            tooltipOpen
+                        />
+                    ))}
+                </SpeedDial>
+            </Box>
         </Grid>
     )
 }
