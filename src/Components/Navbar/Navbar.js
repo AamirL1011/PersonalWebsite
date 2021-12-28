@@ -32,6 +32,8 @@ const useStyles = makeStyles((theme) => ({
         [theme.breakpoints.up('sm')]: {
             display: 'block',
         },
+        fontSize: '1.2em',
+        color: "#e3cfa1",
     },
     logo: {
         display: 'none',
@@ -124,10 +126,10 @@ function Navbar(props) {
 
     return(
         <Grid item xs={12} className={classes.appBar}>
-            <AppBar position="fixed" style={{backgroundColor: "rgba(227, 207, 161, 0.50)", backdropFilter: "blur(6px)"}} elevation={1}>
+            <AppBar position="fixed" style={{backgroundColor: "rgba(255, 249, 235, 0.50)", backdropFilter: "blur(6px)"}} elevation={0}>
                 <Toolbar>
-                    <img className={classes.logo} style={{width: "50px", height: "40px"}} src={process.env.PUBLIC_URL + './Assets/Images/personal_logo3.png'} alt="..."/>
-                    <Typography style={{paddingLeft: "10px"}} className={classes.title} variant="h6" component={"h1"} noWrap>
+                    <img className={classes.logo} style={{width: "50px", height: "40px"}} src={process.env.PUBLIC_URL + './Assets/Images/personal_logo3_transparent.png'} alt="..."/>
+                    <Typography style={{paddingLeft: "10px"}} className={classes.title} noWrap>
                         <span>Aamir Sheergar</span>
                     </Typography>
                     <div className={classes.grow} />

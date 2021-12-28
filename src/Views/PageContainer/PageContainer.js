@@ -5,6 +5,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import {updateMenuState} from "../../Actions/mainActions";
 import Navbar from "../../Components/Navbar/Navbar";
 import { connect } from "react-redux";
+import useMediaQuery from '@mui/material/useMediaQuery';
 import logo from "../../logo.svg";
 
 
@@ -39,34 +40,32 @@ function PageContainer(props) {
     let navigate = useNavigate();
 
 
+/*
+    const desktop =  useMediaQuery("(min-width: 900px)");
+*/
 
-    return(<Grid container direction="column" style={{backgroundColor: "#e3cfa1"}}>
+    return(<Grid container direction="column" justifyContent={"center"} alignItems={"center"} style={{backgroundColor: "#fff9eb", width: "100vw", height: "100vh"}}>
         <Navbar />
         <br/>
-        <Grid container item justifyContent={"center"} alignItems={"center"} xs={12} className="App-header" style={{backgroundColor: "#e3cfa1"}}>
-            <Grid item xs={10}>
+        <Grid container direction={"row"} justifyContent={"space-evenly"} alignItems={"center"} style={{backgroundColor: "#fff9eb"}}>
+            <Grid item xs={10} sm={4} md={3} lg={1} xl={1}>
                 <div className={"scrabbleBox"}>
                     <span className="scrabble animate"><span style={{color: "black"}}>Hi</span></span>
                 </div>
             </Grid>
-            <main className={classes.content}>
-                <div className="App">
-                    <header className="App-header" style={{backgroundColor: "#e3cfa1"}}>
-                        <img src={logo} className="App-logo" alt="logo" />
-                        <p>
-                            Edit <code>src/App.js</code> and save to reload.
-                        </p>
-                        <a
-                            className="App-link"
-                            href="https://reactjs.org"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            Learn React
-                        </a>
-                    </header>
-                </div>
-            </main>
+            <Grid item xs={12} sm={7} md={3} lg={1} xl={1} style={{textAlign: "center"}}>
+                    <img className={"avatar"} src={process.env.PUBLIC_URL + './Assets/Images/bitmoji.png'} alt=""/>
+            </Grid>
+            <Grid item xs={12} style={{backgroundColor: "#fff9eb"}}>
+               {/* <main className={classes.content}>
+                    <div className="App">
+                        <header className="App-header" style={{backgroundColor: "#fff9eb"}}>
+
+                        </header>
+                    </div>
+                </main>*/}
+            </Grid>
+
         </Grid>
     </Grid>)
 }

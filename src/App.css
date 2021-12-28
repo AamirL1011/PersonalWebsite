@@ -50,6 +50,25 @@ video {
   overflow: hidden;
 }
 
+.avatar {
+  border-radius: 50%;
+  width: 180px;
+  height: 180px;
+  border: 5px solid #e3cfa1;
+  box-shadow: 0px 0.5px 0px 0px gray;
+  opacity: 0;
+  animation: opacAboutAnim 5s ease forwards 1.0s;
+}
+
+@keyframes opacAboutAnim{
+  from {
+    opacity: 0%
+  }
+
+  to {
+    opacity: 100%;
+  }
+}
 /* Below CSS typewriter effect settings adapted from here: https://css-tricks.com/snippets/css/typewriter-effect/ */
 .line {
   position: relative;
@@ -81,7 +100,7 @@ video {
   to{border-right-color: transparent;}
 }
 
-/* Below CSS typewriter effect settings adapted from here: */
+/* Below CSS typewriter effect settings adapted from here: https://dev.to/afif/the-css-scrabble-writer-the-next-gen-typewriter-fbi */
 
 .scrabble {
   display: inline-flex;
@@ -167,5 +186,5 @@ video {
   font-family: monospace;
   padding:calc(1ch + 1em - 5px) calc(1ch + 1em - 5px);
   background:conic-gradient(from 90deg at 2px 2px,#0000 90deg,#fff 0)
-  0 0/calc(1ch + 1em) calc(1ch + 1em) #e1d3b2
+  0 0/calc(1ch + 1em) calc(1ch + 1em) #e3cfa1
 }
