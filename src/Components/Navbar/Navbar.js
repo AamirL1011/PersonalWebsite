@@ -59,7 +59,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function Navbar(props) {
-    const {updateMenuState, menuEnabled, showSideMenuButton} = props;
+    const {updateMenuState, menuEnabled} = props;
     const classes = useStyles();
     const theme = useTheme();
     let navigate = useNavigate();
@@ -74,18 +74,13 @@ function Navbar(props) {
     const isMenuOpen = Boolean(anchorEl);
     const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
 
-    const handleProfileMenuOpen = (event) => {
-        setAnchorEl(event.currentTarget);
-    };
+
 
     const handleMobileMenuClose = () => {
         setMobileMoreAnchorEl(null);
     };
 
-    const handleMenuClose = () => {
-        setAnchorEl(null);
-        handleMobileMenuClose();
-    };
+
 
 
     const handleMobileMenuOpen = (event) => {
@@ -96,14 +91,13 @@ function Navbar(props) {
     const renderMenu = (
         <Menu
             anchorEl={anchorEl}
-            anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
+            anchorOrigin={{ vertical: 'top', horizontal: 'left' }}
             id={menuId}
             keepMounted
-            transformOrigin={{ vertical: 'top', horizontal: 'right' }}
+            transformOrigin={{ vertical: 'top', horizontal: 'left' }}
             open={isMenuOpen}
-            onClose={handleMenuClose}
         >
-            <MenuItem><span>Logout  </span><ExitToAppIcon color={"secondary"}/></MenuItem>
+            <MenuItem><span>Logout  </span></MenuItem>
         </Menu>
     );
 
@@ -127,44 +121,18 @@ function Navbar(props) {
     );
 
 
-    const handleSideMenu = () => {
-        updateMenuState(!menuEnabled);
-    }
-
 
     return(
         <Grid item xs={12} className={classes.appBar}>
-            <AppBar position="static">
+            <AppBar position="fixed" style={{backgroundColor: "rgba(128,128,128, 0.3)"}}>
                 <Toolbar>
-                    {(showSideMenuButton)?
-                        <IconButton
-                            edge="start"
-                            className={classes.menuButton}
-                            color="inherit"
-                            aria-label="open drawer"
-                            onClick={handleSideMenu}
-                        >
-                            <MenuIcon />
-                        </IconButton>
-                        :
-                        null
-                    }
-                    <Typography className={classes.title} variant="h6" component={"h1"} noWrap>
-                        <span><span>App</span><span style={{color: `${theme.palette.secondary.main}`}}>/</span><span>Name</span></span>
+                    <img className={classes.logo} style={{width: "50px", height: "40px"}} src={process.env.PUBLIC_URL + './Assets/Images/personal_logo3.png'} alt="..."/>
+                    <Typography style={{paddingLeft: "10px"}} className={classes.title} variant="h6" component={"h1"} noWrap>
+                        <span>Aamir Sheergar</span>
                     </Typography>
-                    <img className={classes.logo} style={{width: "270px", height: "30px"}} src={process.env.PUBLIC_URL + './Assets/Images/logo_inverse.png'} alt="..."/>
                     <div className={classes.grow} />
                     <div className={classes.sectionDesktop}>
-                        <IconButton
-                            edge="end"
-                            aria-label="account of current user"
-                            aria-controls={menuId}
-                            aria-haspopup="true"
-                            onClick={handleProfileMenuOpen}
-                            color="inherit"
-                        >
-                            <AccountBoxIcon fontSize={"large"} /><Typography variant={"subtitle1"} noWrap></Typography>
-                        </IconButton>
+
                     </div>
                     <div className={classes.sectionMobile}>
                         <IconButton
@@ -181,6 +149,9 @@ function Navbar(props) {
                     </div>
                 </Toolbar>
             </AppBar>
+            <br/>
+            <br/>
+            <br/>
             <Backdrop className={classes.backdrop} open={loadingBackdrop}>
                 <CircularProgress color="inherit" />
             </Backdrop>

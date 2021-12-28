@@ -1,17 +1,6 @@
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import { Route, Switch, useNavigate} from 'react-router-dom';
-import Drawer from '@material-ui/core/Drawer';
-import Toolbar from '@material-ui/core/Toolbar';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-import Divider from '@material-ui/core/Divider';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail';
-import HomeIcon from '@material-ui/icons/Home';
-import DashboardIcon from '@material-ui/icons/Dashboard';
 import { makeStyles } from '@material-ui/core/styles';
 import {updateMenuState} from "../../Actions/mainActions";
 import Navbar from "../../Components/Navbar/Navbar";
@@ -46,73 +35,23 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function PageContainer(props) {
-    const { menuEnabled, updateMenuState } = props;
     const classes = useStyles();
     let navigate = useNavigate();
 
 
-    /*
-    * Handles closing side menu if an event occurs
-    * */
-    const handleSideMenuClose = () => (event) => {
-        if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
-            return;
-        }
-        updateMenuState(false);
-    }
 
-
-    {/* Example side menu is provided below */}
-    const list = () => (
-        <div
-            className={classes.drawerContainer}
-            onClick={handleSideMenuClose(false)}
-            onKeyDown={handleSideMenuClose(false)}
-        >
-            <List>
-                <ListItem button key={"home"} onClick={() => navigate("/home")}>
-                    <ListItemIcon><HomeIcon /></ListItemIcon>
-                    <ListItemText primary={"Home"} />
-                </ListItem>
-                <ListItem button key={"controlPanel"} onClick={() => navigate("/controlPanel")}>
-                    <ListItemIcon><DashboardIcon /></ListItemIcon>
-                    <ListItemText primary={"Control Panel"} />
-                </ListItem>
-            </List>
-            <Divider />
-            <List>
-                {['Inactive', 'Inactive', 'Inactive'].map((text, index) => (
-                    <ListItem button key={text}>
-                        <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-                        <ListItemText primary={text} />
-                    </ListItem>
-                ))}
-            </List>
-        </div>
-    );
-
-    return(<Grid container direction="column">
-        {/* Navbar component, set side menu button parameter -->
-        button updates redux state to show/hide left sidebar */}
-        <Navbar showSideMenuButton={true} />
-        {/* App content example below with sidebar */}
-        <Grid item xs={12} className="App-header">
-            {/* Side menu component */}
-            <Drawer
-                anchor={'left'} open={menuEnabled} onClose={handleSideMenuClose}
-                style={{zIndex: 0}}
-                classes={{
-                    paper: classes.drawerPaper,
-                }}
-                ModalProps={{ onBackdropClick: handleSideMenuClose() }}
-            >
-                <Toolbar />
-                {/* Side menu items added for rendering */}
-                {list()}
-            </Drawer>
+    return(<Grid container direction="column" style={{backgroundColor: "#e3cfa1"}}>
+        <Navbar />
+        <br/>
+        <Grid container item justifyContent={"center"} alignItems={"center"} xs={12} className="App-header" style={{backgroundColor: "#e3cfa1"}}>
+            <Grid item xs={10}>
+                <div className={"scrabbleBox"}>
+                    <span className="scrabble animate"><span style={{color: "black"}}>Hi</span></span>
+                </div>
+            </Grid>
             <main className={classes.content}>
                 <div className="App">
-                    <header className="App-header">
+                    <header className="App-header" style={{backgroundColor: "#e3cfa1"}}>
                         <img src={logo} className="App-logo" alt="logo" />
                         <p>
                             Edit <code>src/App.js</code> and save to reload.
