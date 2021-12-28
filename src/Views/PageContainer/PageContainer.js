@@ -7,6 +7,8 @@ import Navbar from "../../Components/Navbar/Navbar";
 import { connect } from "react-redux";
 import useMediaQuery from '@mui/material/useMediaQuery';
 import logo from "../../logo.svg";
+import {Divider} from "@material-ui/core";
+import Box from "@mui/material/Box";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -49,23 +51,32 @@ function PageContainer(props) {
         <br/>
         <Grid container direction={"row"} justifyContent={"space-evenly"} alignItems={"center"} style={{backgroundColor: "#fff9eb"}}>
             <Grid item xs={10} sm={4} md={3} lg={1} xl={1}>
-                <div className={"scrabbleBox"}>
+                <div className={"scrabbleBox"} style={{maxWidth: "150px"}}>
                     <span className="scrabble animate"><span style={{color: "black"}}>Hi</span></span>
                 </div>
             </Grid>
-            <Grid item xs={12} sm={7} md={3} lg={1} xl={1} style={{textAlign: "center"}}>
+            <Grid item xs={12} sm={7} md={3} lg={1} xl={1} style={{textAlign: "center", paddingTop: "10px"}}>
                     <img className={"avatar"} src={process.env.PUBLIC_URL + './Assets/Images/bitmoji.png'} alt=""/>
             </Grid>
             <Grid item xs={12} style={{backgroundColor: "#fff9eb"}}>
-               {/* <main className={classes.content}>
-                    <div className="App">
-                        <header className="App-header" style={{backgroundColor: "#fff9eb"}}>
 
-                        </header>
-                    </div>
-                </main>*/}
+            </Grid>
+            <Grid item xs={12}>
+                <br/>
             </Grid>
 
+        </Grid>
+        <Grid container item alignItems={"center"} justifyContent={"center"} style={{position: "absolute", bottom: "0"}}>
+            <Box sx={{ flexGrow: 1 }}>
+                <Grid container>
+                    <Grid item xs={12}>
+                        <Divider variant="middle"/>
+                    </Grid>
+                    <Grid item xs={12} style={{textAlign: "center"}}>
+                        Footer
+                    </Grid>
+                </Grid>
+            </Box>
         </Grid>
     </Grid>)
 }
