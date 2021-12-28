@@ -188,3 +188,22 @@ video {
   background:conic-gradient(from 90deg at 2px 2px,#0000 90deg,#fff 0)
   0 0/calc(1ch + 1em) calc(1ch + 1em) #e3cfa1
 }
+
+/*===========================*/
+
+/**{
+  scrollbar-width: thin;
+  scrollbar-color: #e3cfa1 #fcfcfc;
+}
+
+*::-webkit-scrollbar {
+  width: 12px;
+}
+*::-webkit-scrollbar-track {
+  background: #fcfcfc;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: #e3cfa1;
+  border-radius: 15px;
+  border: 2px solid #e3cfa1;
+}*/

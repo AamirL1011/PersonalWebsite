@@ -13,6 +13,113 @@ import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
 import Typography from "@material-ui/core/Typography";
 
+import Timeline from '@mui/lab/Timeline';
+import TimelineItem from '@mui/lab/TimelineItem';
+import TimelineSeparator from '@mui/lab/TimelineSeparator';
+import TimelineConnector from '@mui/lab/TimelineConnector';
+import TimelineContent from '@mui/lab/TimelineContent';
+import TimelineOppositeContent from '@mui/lab/TimelineOppositeContent';
+import TimelineDot from '@mui/lab/TimelineDot';
+import FilterDramaIcon from '@mui/icons-material/FilterDrama';
+import LaptopMacIcon from '@mui/icons-material/LaptopMac';
+
+
+export function CustomizedTimeline() {
+    return (
+        <Timeline position="alternate">
+            <TimelineItem>
+                <TimelineOppositeContent
+                    sx={{ m: 'auto 0' }}
+                    align="right"
+                    variant="body2"
+                    color="text.secondary"
+                >
+                    September 2018 - April 2019
+                </TimelineOppositeContent>
+                <TimelineSeparator>
+                    <TimelineConnector />
+                    <TimelineDot>
+                        <LaptopMacIcon />
+                    </TimelineDot>
+                    <TimelineConnector />
+                </TimelineSeparator>
+                <TimelineContent sx={{ py: '12px', px: 2 }}>
+                    <Typography variant="h6" component="span">
+                        Blackberry QNX
+                    </Typography>
+                    <Typography>Software Integration Intern</Typography>
+                </TimelineContent>
+            </TimelineItem>
+            <TimelineItem>
+                <TimelineOppositeContent
+                    sx={{ m: 'auto 0' }}
+                    variant="body2"
+                    color="text.secondary"
+                >
+                    May 2019 - August 2019
+                </TimelineOppositeContent>
+                <TimelineSeparator>
+                    <TimelineConnector />
+                    <TimelineDot color="primary" variant="outlined">
+                        <LaptopMacIcon />
+                    </TimelineDot>
+                    <TimelineConnector />
+                </TimelineSeparator>
+                <TimelineContent sx={{ py: '12px', px: 2 }}>
+                    <Typography variant="h6" component="span">
+                        Blackberry QNX
+                    </Typography>
+                    <Typography>Software Testing Intern</Typography>
+                </TimelineContent>
+            </TimelineItem>
+            <TimelineItem>
+                <TimelineOppositeContent
+                    sx={{ m: 'auto 0' }}
+                    variant="body2"
+                    color="text.secondary"
+                >
+                    September 2020 - December 2020
+                </TimelineOppositeContent>
+                <TimelineSeparator>
+                    <TimelineConnector />
+                    <TimelineDot>
+                        <FilterDramaIcon />
+                    </TimelineDot>
+                    <TimelineConnector />
+                </TimelineSeparator>
+                <TimelineContent sx={{ py: '12px', px: 2 }}>
+                    <Typography variant="h6" component="span">
+                        UBC-AWS Cloud Innovation Centre
+                    </Typography>
+                    <Typography>Software Developer Intern</Typography>
+                </TimelineContent>
+            </TimelineItem>
+            <TimelineItem>
+                <TimelineOppositeContent
+                    sx={{ m: 'auto 0' }}
+                    variant="body2"
+                    color="text.secondary"
+                >
+                    January 2021 - August 2021
+                </TimelineOppositeContent>
+                <TimelineSeparator>
+                    <TimelineConnector />
+                    <TimelineDot color="primary" variant="outlined">
+                        <FilterDramaIcon />
+                    </TimelineDot>
+                    <TimelineConnector />
+                </TimelineSeparator>
+                <TimelineContent sx={{ py: '12px', px: 2 }}>
+                    <Typography variant="h6" component="span">
+                        UBC-AWS Cloud Innovation Centre
+                    </Typography>
+                    <Typography>Software Developer (part time)</Typography>
+                </TimelineContent>
+            </TimelineItem>
+        </Timeline>
+    );
+}
+
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -79,7 +186,7 @@ function PageContainer(props) {
                 <br/>
             </Grid>
             <Grid item xs={12} style={{paddingTop: "15px", backgroundColor: "rgba(227, 207, 161, 1.00)"}}>
-            stuff
+                {CustomizedTimeline()}
             </Grid>
             <Grid item xs={12}>
                 <br/>
