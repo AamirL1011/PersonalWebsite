@@ -38,7 +38,7 @@ const useStyles = makeStyles((theme) => ({
         [theme.breakpoints.up('sm')]: {
             display: 'block',
         },
-        paddingLeft: '15px',
+        paddingLeft: '10px',
     },
     sectionDesktop: {
         display: 'none',
@@ -124,7 +124,7 @@ function Navbar(props) {
 
     return(
         <Grid item xs={12} className={classes.appBar}>
-            <AppBar position="fixed" style={{backgroundColor: "rgba(128,128,128, 0.3)"}}>
+            <AppBar position="fixed" style={{backgroundColor: "rgba(227, 207, 161, 0.50)", backdropFilter: "blur(6px)"}} elevation={1}>
                 <Toolbar>
                     <img className={classes.logo} style={{width: "50px", height: "40px"}} src={process.env.PUBLIC_URL + './Assets/Images/personal_logo3.png'} alt="..."/>
                     <Typography style={{paddingLeft: "10px"}} className={classes.title} variant="h6" component={"h1"} noWrap>
