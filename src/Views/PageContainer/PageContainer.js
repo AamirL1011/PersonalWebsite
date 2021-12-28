@@ -187,7 +187,7 @@ function PageContainer(props) {
                             <strong>About me:</strong>
                         </Typography>
                         <Typography variant="body2">
-                            <p>Hello, nice to meet you! I'm a 4th year computer science student at The University of British Columbia in Vancouver, Canada. I have previously completed a BSc in Biology, with a focus at the cellular level.
+                            <p>Nice to meet you! I'm a 4th year computer science student and full-stack developer based in Vancouver, Canada. I have previously completed a BSc in Biology, with a focus at the cellular level.
                             I am goal driven, passionate about learning, and I love exploring new tools and technologies!</p>
                             Feel free to check out my <a href={process.env.PUBLIC_URL + './Assets/Documents/resume.pdf'} download="resume.pdf">resume</a>, my <a href="https://github.com/AamirL1011">GitHub</a>, and contact me on <a href="https://www.linkedin.com/in/aamir-s/">LinkedIn</a> if you have any questions!
                             <br />
