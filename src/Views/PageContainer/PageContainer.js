@@ -6,9 +6,12 @@ import {updateMenuState} from "../../Actions/mainActions";
 import Navbar from "../../Components/Navbar/Navbar";
 import { connect } from "react-redux";
 import useMediaQuery from '@mui/material/useMediaQuery';
-import logo from "../../logo.svg";
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
 import {Divider} from "@material-ui/core";
 import Box from "@mui/material/Box";
+import Paper from "@mui/material/Paper";
+import Typography from "@material-ui/core/Typography";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -46,10 +49,9 @@ function PageContainer(props) {
     const desktop =  useMediaQuery("(min-width: 900px)");
 */
 
-    return(<Grid container direction="column" justifyContent={"center"} alignItems={"center"} style={{backgroundColor: "#fff9eb", width: "100vw", height: "100vh"}}>
-        <Navbar />
-        <br/>
-        <Grid container direction={"row"} justifyContent={"space-evenly"} alignItems={"center"} style={{backgroundColor: "#fff9eb"}}>
+    return(
+        <Grid container direction="column"  direction={"row"} justifyContent={"space-evenly"} alignItems={"center"} style={{backgroundColor: "#fff9eb", width: "100vw", height: "100vh"}}>
+            <Navbar />
             <Grid item xs={10} sm={4} md={3} lg={1} xl={1}>
                 <div className={"scrabbleBox"} style={{maxWidth: "150px"}}>
                     <span className="scrabble animate"><span style={{color: "black"}}>Hi</span></span>
@@ -58,27 +60,44 @@ function PageContainer(props) {
             <Grid item xs={12} sm={7} md={3} lg={1} xl={1} style={{textAlign: "center", paddingTop: "10px"}}>
                     <img className={"avatar"} src={process.env.PUBLIC_URL + './Assets/Images/bitmoji.png'} alt=""/>
             </Grid>
-            <Grid item xs={12} style={{backgroundColor: "#fff9eb"}}>
-
+            <Grid item xs={10} justifyContent={"center"} alignItems={"center"} style={{paddingTop: "15px"}} >
+                <Card sx={{ borderRadius: "10px", backgroundColor: "rgba(255, 253, 250, 1.00)" }} elevation={1}>
+                    <CardContent>
+                        <Typography sx={{ fontSize: 14 }} gutterBottom>
+                            <strong>About me:</strong>
+                        </Typography>
+                        <Typography variant="body2">
+                            <p>Hello, nice to meet you! I'm a 4th year computer science student at The University of British Columbia in Vancouver, Canada. I have previously completed a BSc in Biology, with a focus at the cellular level.
+                            I am goal driven, passionate about learning, and I love exploring new tools and technologies!</p>
+                            Feel free to check out my <a href={process.env.PUBLIC_URL + './Assets/Documents/resume.pdf'} download="resume.pdf">resume</a>, my <a href="https://github.com/AamirL1011">GitHub</a>, and contact me on <a href="https://www.linkedin.com/in/aamir-s/">LinkedIn</a> if you have any questions!
+                            <br />
+                        </Typography>
+                    </CardContent>
+                </Card>
             </Grid>
             <Grid item xs={12}>
                 <br/>
             </Grid>
-
-        </Grid>
-        <Grid container item alignItems={"center"} justifyContent={"center"} style={{position: "absolute", bottom: "0"}}>
-            <Box sx={{ flexGrow: 1 }}>
-                <Grid container>
-                    <Grid item xs={12}>
-                        <Divider variant="middle"/>
+            <Grid item xs={12} style={{paddingTop: "15px", backgroundColor: "rgba(227, 207, 161, 1.00)"}}>
+            stuff
+            </Grid>
+            <Grid item xs={12}>
+                <br/>
+            </Grid>
+            <Grid container item alignItems={"center"} justifyContent={"center"} style={{bottom: "0"}}>
+                <Box sx={{ flexGrow: 1 }}>
+                    <Grid container>
+                        <Grid item xs={12}>
+                            <Divider variant="middle"/>
+                        </Grid>
+                        <Grid item xs={12} style={{textAlign: "center"}}>
+                            ©2022 Designed by Aamir Sheergar
+                        </Grid>
                     </Grid>
-                    <Grid item xs={12} style={{textAlign: "center"}}>
-                        Footer
-                    </Grid>
-                </Grid>
-            </Box>
+                </Box>
+            </Grid>
         </Grid>
-    </Grid>)
+    )
 }
 
 const mapStateToProps = (state) => {
