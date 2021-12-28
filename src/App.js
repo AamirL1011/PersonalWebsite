@@ -12,6 +12,8 @@ import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import {Button} from "@material-ui/core";
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import Backdrop from '@mui/material/Backdrop';
+import CircularProgress from '@mui/material/CircularProgress';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -41,12 +43,22 @@ function App(props) {
   const {appState, updateMainState} = props;
   const classes = useStyles();
   const [mainState, updateMainAppState] = useState(appState);
+  const [openLoad, setOpenLoad] = React.useState(false);
 
 
   useEffect(() => {
     updateMainState(mainState);
   }, [mainState]);
 
+  const handleEnter = () => {
+    setOpenLoad(true);
+   const loadTimer = setTimeout(() => {
+      setOpenLoad(false);
+      clearTimeout(loadTimer);
+      updateMainAppState(true);
+    }, 500);
+
+  }
 
 
   return (
@@ -92,7 +104,7 @@ function App(props) {
                                     <Button variant="outlined" endIcon={<ArrowForwardIosIcon />}
                                             style={{textTransform: "none"}}
                                             className={classes.enterButton}
-                                    onClick={() => updateMainAppState(true)}>
+                                    onClick={() => handleEnter()}>
                                       Enter
                                     </Button>
                                   </Grid>
@@ -102,7 +114,12 @@ function App(props) {
                             </Grid>
                           </Grid>
                         </Grid>
-
+                        <Backdrop
+                            sx={{ color: '#252525', zIndex: "60" }}
+                            open={openLoad}
+                        >
+                          <CircularProgress color="inherit" />
+                        </Backdrop>
                       </Grid>
                 )
             }
