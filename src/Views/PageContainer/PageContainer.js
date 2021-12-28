@@ -38,7 +38,7 @@ export function CustomizedTimeline() {
                 </TimelineOppositeContent>
                 <TimelineSeparator>
                     <TimelineConnector />
-                    <TimelineDot>
+                    <TimelineDot style={{backgroundColor: "#9e5353"}}>
                         <LaptopMacIcon />
                     </TimelineDot>
                     <TimelineConnector />
@@ -58,10 +58,10 @@ export function CustomizedTimeline() {
                 >
                     May 2019 - August 2019
                 </TimelineOppositeContent>
-                <TimelineSeparator>
+                <TimelineSeparator style={{color:"#53859e"}}>
                     <TimelineConnector />
-                    <TimelineDot color="primary" variant="outlined">
-                        <LaptopMacIcon />
+                    <TimelineDot color="inherit" variant="outlined">
+                        <LaptopMacIcon style={{color: "black"}} />
                     </TimelineDot>
                     <TimelineConnector />
                 </TimelineSeparator>
@@ -82,7 +82,7 @@ export function CustomizedTimeline() {
                 </TimelineOppositeContent>
                 <TimelineSeparator>
                     <TimelineConnector />
-                    <TimelineDot>
+                    <TimelineDot style={{backgroundColor: "#9e5353"}}>
                         <FilterDramaIcon />
                     </TimelineDot>
                     <TimelineConnector />
@@ -102,10 +102,10 @@ export function CustomizedTimeline() {
                 >
                     January 2021 - August 2021
                 </TimelineOppositeContent>
-                <TimelineSeparator>
+                <TimelineSeparator style={{color:"#53859e"}}>
                     <TimelineConnector />
-                    <TimelineDot color="primary" variant="outlined">
-                        <FilterDramaIcon />
+                    <TimelineDot color="inherit" variant="outlined">
+                        <FilterDramaIcon style={{color: "black"}} />
                     </TimelineDot>
                     <TimelineConnector />
                 </TimelineSeparator>
