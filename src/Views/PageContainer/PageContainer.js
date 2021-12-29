@@ -13,6 +13,7 @@ import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
 import Typography from "@material-ui/core/Typography";
 
+
 import Timeline from '@mui/lab/Timeline';
 import TimelineItem from '@mui/lab/TimelineItem';
 import TimelineSeparator from '@mui/lab/TimelineSeparator';
@@ -22,6 +23,7 @@ import TimelineOppositeContent from '@mui/lab/TimelineOppositeContent';
 import TimelineDot from '@mui/lab/TimelineDot';
 import FilterDramaIcon from '@mui/icons-material/FilterDrama';
 import LaptopMacIcon from '@mui/icons-material/LaptopMac';
+import TimelineButton from '../../Components/TimelineButton/TimelineButton';
 
 
 import SpeedDial from '@mui/material/SpeedDial';
@@ -57,10 +59,11 @@ export function CustomizedTimeline() {
                     <TimelineConnector />
                 </TimelineSeparator>
                 <TimelineContent sx={{ py: '12px', px: 2 }}>
-                    <Typography variant="h6" component="span">
-                        Blackberry QNX
-                    </Typography>
-                    <Typography>Software Integration Intern</Typography>
+                    <TimelineButton
+                        job={"Blackberry QNX"}
+                        title={"Software Integration Intern"}
+                        imagePath={"bbryLogo.jpeg"}
+                    />
                 </TimelineContent>
             </TimelineItem>
             <TimelineItem>
@@ -79,10 +82,11 @@ export function CustomizedTimeline() {
                     <TimelineConnector />
                 </TimelineSeparator>
                 <TimelineContent sx={{ py: '12px', px: 2 }}>
-                    <Typography variant="h6" component="span">
-                        Blackberry QNX
-                    </Typography>
-                    <Typography>Software Testing Intern</Typography>
+                    <TimelineButton
+                        job={"Blackberry QNX"}
+                        title={"Software Testing Intern"}
+                        imagePath={"bbryLogo.jpeg"}
+                    />
                 </TimelineContent>
             </TimelineItem>
             <TimelineItem>
@@ -101,10 +105,11 @@ export function CustomizedTimeline() {
                     <TimelineConnector />
                 </TimelineSeparator>
                 <TimelineContent sx={{ py: '12px', px: 2 }}>
-                    <Typography variant="h6" component="span">
-                        UBC-AWS Cloud Innovation Centre
-                    </Typography>
-                    <Typography>Software Developer Intern</Typography>
+                    <TimelineButton
+                        job={"UBC-AWS Cloud Innovation Centre"}
+                        title={"Software Developer Intern"}
+                        imagePath={"ubcAws2.png"}
+                    />
                 </TimelineContent>
             </TimelineItem>
             <TimelineItem>
@@ -123,10 +128,11 @@ export function CustomizedTimeline() {
                     <TimelineConnector />
                 </TimelineSeparator>
                 <TimelineContent sx={{ py: '12px', px: 2 }}>
-                    <Typography variant="h6" component="span">
-                        UBC-AWS Cloud Innovation Centre
-                    </Typography>
-                    <Typography>Software Developer (part time)</Typography>
+                    <TimelineButton
+                        job={"UBC-AWS Cloud Innovation Centre"}
+                        title={"Software Developer (part time)"}
+                        imagePath={"ubcAws2.png"}
+                    />
                 </TimelineContent>
             </TimelineItem>
         </Timeline>
@@ -198,7 +204,12 @@ function PageContainer(props) {
             <Grid item xs={12}>
                 <br/>
             </Grid>
-            <Grid item xs={12} style={{paddingTop: "15px", backgroundColor: "rgba(227, 207, 161, 1.00)"}}>
+            <Grid item xs={12} style={{textAlign: "center",paddingTop: "15px", backgroundColor: "rgba(227, 207, 161, 1.00)" }}>
+                <Typography variant={"h5"}>
+                    Experience
+                </Typography>
+            </Grid>
+            <Grid item xs={12} style={{backgroundColor: "rgba(227, 207, 161, 1.00)"}}>
                 {CustomizedTimeline()}
             </Grid>
             <Grid item xs={12}>
@@ -211,7 +222,7 @@ function PageContainer(props) {
                             <Divider variant="middle"/>
                         </Grid>
                         <Grid item xs={12} style={{textAlign: "center"}}>
-                            ©2022 Designed by Aamir Sheergar
+                            ©2022 Created with ❤️ by Aamir Sheergar
                         </Grid>
                     </Grid>
                 </Box>
