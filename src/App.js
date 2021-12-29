@@ -103,7 +103,7 @@ function App(props) {
                                     <Grid item xs={4} alignItems={"center"} justifyContent={"center"} style={{textAlign: "center"}}>
                                       <Button variant="outlined" endIcon={<ArrowForwardIosIcon />}
                                               style={{textTransform: "none"}}
-                                              className={classes.enterButton}
+                                              className={`enter-button ${classes.enterButton}`}
                                               onClick={() => handleEnter()}>
                                         Enter
                                       </Button>

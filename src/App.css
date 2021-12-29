@@ -76,6 +76,25 @@ video {
   opacity: 0.8;
 }
 
+.enter-button {
+  animation: pulse 2.0s infinite;
+}
+
+@keyframes pulse {
+  from {
+    box-shadow: 0 0 0 0.01rem rgba(0, 0, 0, 0.15);
+  }
+
+  to {
+    box-shadow: 0 0 0 0.30rem rgba(0, 0, 0, 0.00);
+  }
+}
+
+.enter-button:hover {
+  animation: none;
+}
+
+
 /* Below CSS typewriter effect settings adapted from here: https://css-tricks.com/snippets/css/typewriter-effect/ */
 .line {
   position: relative;
