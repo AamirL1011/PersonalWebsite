@@ -17,6 +17,8 @@ import Backdrop from '@material-ui/core/Backdrop';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import { connect } from "react-redux";
 import {updateMenuState} from "../../Actions/mainActions";
+import Box from "@mui/material/Box";
+import {Button} from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
     grow: {
@@ -32,7 +34,7 @@ const useStyles = makeStyles((theme) => ({
         [theme.breakpoints.up('sm')]: {
             display: 'block',
         },
-        fontSize: '1.2em',
+        fontSize: '1.3em',
         color: "#e3cfa1",
     },
     logo: {
@@ -68,6 +70,7 @@ function Navbar(props) {
 
 
     const [loadingBackdrop, setLoadingBackdrop] = React.useState(false);
+
 
 
     const [anchorEl, setAnchorEl] = React.useState(null);
@@ -129,9 +132,29 @@ function Navbar(props) {
             <AppBar position="fixed" style={{backgroundColor: "rgba(255, 249, 235, 0.50)", backdropFilter: "blur(6px)"}} elevation={0}>
                 <Toolbar>
                     <img className={classes.logo} style={{width: "50px", height: "40px"}} src={process.env.PUBLIC_URL + './Assets/Images/personal_logo3_transparent.png'} alt="..."/>
-                    <Typography style={{paddingLeft: "10px"}} className={classes.title} noWrap>
+                    <Typography style={{paddingLeft: "10px", paddingRight: "10px"}} className={classes.title} noWrap>
                         <span>Aamir Sheergar</span>
                     </Typography>
+                    <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+                            <Button
+                                key={"home"}
+                                sx={{ my: 2, display: 'block' }}
+                            >
+                                <span style={{color: "#9e5353"}}>Home</span>
+                            </Button>
+                            <Button
+                                key={"experience"}
+                                sx={{ my: 2, display: 'block' }}
+                            >
+                                <span style={{color: "#9e5353"}}>Experience</span>
+                            </Button>
+                        <Button
+                            key={"projects"}
+                            sx={{ my: 2, display: 'block' }}
+                        >
+                            <span style={{color: "#9e5353"}}>Projects</span>
+                        </Button>
+                    </Box>
                     <div className={classes.grow} />
                     <div className={classes.sectionDesktop}>
 

@@ -64,7 +64,7 @@ function App(props) {
   return (
       <StylesProvider injectFirst>
         <ThemeProvider theme={theme}>
-              <Grid>
+              <Grid style={{height: "100vh"}}>
                 {
                     !mainState && (
                         <Grid container justifyContent={"center"} alignItems={"center"} style={{backgroundColor: "lightgray", width: "100vw", height: "100vh"}}>
