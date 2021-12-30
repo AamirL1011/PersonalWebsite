@@ -173,7 +173,7 @@ function HomePage(props) {
     */
 
     return(
-        <Grid container item direction={"row"} justifyContent={"space-evenly"} alignItems={"center"} style={{backgroundColor: "#fff9eb"}}>
+        <Grid container item direction={"row"} justifyContent={"center"} alignItems={"center"} style={{backgroundColor: "#fff9eb"}}>
             <Grid item xs={10} sm={4} md={3} lg={1} xl={1}>
                 <div className={"scrabbleBox"} style={{maxWidth: "150px"}}>
                     <span className="scrabble animate"><span style={{color: "black"}}>Hi</span></span>
@@ -210,18 +210,6 @@ function HomePage(props) {
             </Grid>
             <Grid item xs={12}>
                 <br/>
-            </Grid>
-            <Grid container item alignItems={"center"} justifyContent={"center"} style={{bottom: "0"}}>
-                <Box sx={{ flexGrow: 1 }}>
-                    <Grid container>
-                        <Grid item xs={12}>
-                            <Divider variant="middle"/>
-                        </Grid>
-                        <Grid item xs={12} style={{textAlign: "center"}}>
-                            ©2022 Created with ❤️ by Aamir Sheergar
-                        </Grid>
-                    </Grid>
-                </Box>
             </Grid>
         </Grid>
     )
