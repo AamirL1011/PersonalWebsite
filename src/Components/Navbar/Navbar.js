@@ -145,12 +145,14 @@ function Navbar(props) {
                             <Button
                                 key={"experience"}
                                 sx={{ my: 2, display: 'block' }}
+                                href={"#experience"}
                             >
                                 <span style={{color: "#9e5353"}}>Experience</span>
                             </Button>
                         <Button
                             key={"projects"}
                             sx={{ my: 2, display: 'block' }}
+                            href={"#projects"}
                         >
                             <span style={{color: "#9e5353"}}>Projects</span>
                         </Button>

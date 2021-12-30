@@ -46,7 +46,8 @@ export function CustomizedTimeline() {
                     variant="body2"
                     color="text.secondary"
                 >
-                    September 2018 - April 2019
+                    <Typography variant={"body2"}>September 2018 - April 2019</Typography>
+                    <Typography variant={"body2"}>(8 months)</Typography>
                 </TimelineOppositeContent>
                 <TimelineSeparator>
                     <TimelineConnector />
@@ -69,7 +70,8 @@ export function CustomizedTimeline() {
                     variant="body2"
                     color="text.secondary"
                 >
-                    May 2019 - August 2019
+                    <Typography variant={"body2"}>May 2019 - August 2019</Typography>
+                    <Typography variant={"body2"}>(4 months)</Typography>
                 </TimelineOppositeContent>
                 <TimelineSeparator style={{color:"#53859e"}}>
                     <TimelineConnector />
@@ -92,7 +94,8 @@ export function CustomizedTimeline() {
                     variant="body2"
                     color="text.secondary"
                 >
-                    September 2020 - December 2020
+                    <Typography variant={"body2"}>September 2020 - December 2020</Typography>
+                    <Typography variant={"body2"}>(4 months)</Typography>
                 </TimelineOppositeContent>
                 <TimelineSeparator>
                     <TimelineConnector />
@@ -115,7 +118,8 @@ export function CustomizedTimeline() {
                     variant="body2"
                     color="text.secondary"
                 >
-                    January 2021 - August 2021
+                    <Typography variant={"body2"}>January 2021 - August 2021</Typography>
+                    <Typography variant={"body2"}>(8 months)</Typography>
                 </TimelineOppositeContent>
                 <TimelineSeparator style={{color:"#53859e"}}>
                     <TimelineConnector />
@@ -200,7 +204,7 @@ function HomePage(props) {
             <Grid item xs={12}>
                 <br/>
             </Grid>
-            <Grid item xs={12} style={{textAlign: "center",paddingTop: "15px", backgroundColor: "rgba(227, 207, 161, 1.00)" }}>
+            <Grid item xs={12} style={{textAlign: "center", paddingTop: "15px", backgroundColor: "rgba(227, 207, 161, 1.00)" }} id={"experience"}>
                 <Typography variant={"h5"}>
                     Experience
                 </Typography>
@@ -210,6 +214,11 @@ function HomePage(props) {
             </Grid>
             <Grid item xs={12}>
                 <br/>
+            </Grid>
+            <Grid item xs={12} style={{textAlign: "center"}} id={"projects"}>
+                <Typography variant={"h5"}>
+                    Projects
+                </Typography>
             </Grid>
         </Grid>
     )
