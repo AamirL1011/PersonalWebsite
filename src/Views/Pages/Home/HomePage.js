@@ -69,15 +69,17 @@ function HomePage(props) {
             <Grid item xs={12} sm={5} md={2} lg={1} xl={1} style={{textAlign: "center", paddingTop: "10px"}}>
                 <img className={"avatar"} src={process.env.PUBLIC_URL + './Assets/Images/bitmoji.png'} alt=""/>
             </Grid>
-            <Grid item xs={10} justifyContent={"center"} alignItems={"center"} style={{paddingTop: "15px"}} >
+            <Grid item xs={10} style={{paddingTop: "15px"}} >
                 <Card sx={{ borderRadius: "10px", backgroundColor: "#fff9eb" }} elevation={0}>
                     <CardContent>
                         <Typography variant={"h5"} gutterBottom>
                             <strong style={{fontFamily: "Inter", color: "rgba(0, 0, 0, 0.7)", fontWeight: "500"}}>About me:</strong>
                         </Typography>
                         <Typography variant="body1">
-                            <p style={{fontFamily: "Inter", color: "rgba(0, 0, 0, 0.6)"}}>Nice to meet you! I'm a 4th year computer science student and full-stack developer based in Vancouver, Canada. I have previously completed a BSc in Biology, with a focus at the cellular level.
-                                I am goal driven, passionate about learning, and I love exploring new tools and technologies!</p>
+                            <span style={{fontFamily: "Inter", color: "rgba(0, 0, 0, 0.6)"}}>Nice to meet you! I'm a 4th year computer science student and full-stack developer based in Vancouver, Canada. I have previously completed a BSc in Biology, with a focus at the cellular level.
+                                I am goal driven, passionate about learning, and I love exploring new tools and technologies!</span>
+                            <br/>
+                            <br/>
                             <span style={{fontFamily: "Inter", color: "rgba(0, 0, 0, 0.6)"}}>Feel free to check out my <a href={process.env.PUBLIC_URL + './Assets/Documents/resume.pdf'} download="resume.pdf" style={{color: "#9e5353"}}>resume</a>, my <a href="https://github.com/AamirL1011" style={{color: "#9e5353"}}>GitHub</a>, and contact me on <a href="https://www.linkedin.com/in/aamir-s/" style={{color: "#9e5353"}}>LinkedIn</a> if you have any questions!</span>
                             <br />
                         </Typography>
