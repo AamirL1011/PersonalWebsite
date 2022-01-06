@@ -6,6 +6,8 @@ import Typography from '@mui/material/Typography';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import {CardMedia} from "@material-ui/core";
+import {updateWorkDialogState} from "../../Actions/mainActions";
+import {connect} from "react-redux";
 
 
 
@@ -17,18 +19,16 @@ const TimeButton = styled(ButtonBase)(({ theme }) => ({
 
 
 
-export default function TimelineButton(props) {
-    const {job, title, imagePath} = props;
+function TimelineButton(props) {
+    const {job, title, imagePath, updateWorkDialogState} = props;
 
     return (
         <Box>
             <TimeButton
                     focusRipple={true}
                     key={job}
-                    style={{
-
-                    }}
-                >
+                    onClick={() => updateWorkDialogState(true)}
+            >
                     <Card style={{display: 'flex', backgroundColor: "rgba(235, 215, 171, 1.00)"}} elevation={1}>
                         <Box sx={{ display: 'flex', flexDirection: 'column' }}>
                             <CardMedia
@@ -53,3 +53,15 @@ export default function TimelineButton(props) {
         </Box>
     );
 }
+
+const mapStateToProps = (state) => {
+    return {
+        showWorkDialog: state.appState.showWorkDialog,
+    };
+};
+
+const mapDispatchToProps = {
+    updateWorkDialogState,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(TimelineButton);

@@ -1,6 +1,7 @@
 const initialState = {
     showMain: false,
     showSideBar: false,
+    showWorkDialog: false,
 };
 
 
@@ -9,14 +10,20 @@ const appStateReducer = (currentState = initialState, action) => {
     switch(action.type) {
         case "SET_MAIN_STATE": {
             return {
+                ...newState,
                 showMain: action.payload,
-                ...newState
             }
         }
         case "SET_MENU_STATE": {
             return {
+                ...newState,
                 showSideBar: action.payload,
-                ...newState
+            }
+        }
+        case "SET_WORK_DIALOG_STATE": {
+            return {
+                ...newState,
+                showWorkDialog: action.payload,
             }
         }
         default:

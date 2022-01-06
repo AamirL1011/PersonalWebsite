@@ -6,6 +6,13 @@ export const updateMainState = (payload) => {
     }
 }
 
+// Open or close work dialog
+export const updateWorkDialogState = (payload) => {
+    return (dispatch) => {
+        dispatch({ type: "SET_WORK_DIALOG_STATE", payload: payload });
+    }
+}
+
 // ===================================---CHANGE SIDE MENU STATE---=======================================
 // Updates the sidebar menu state of the application
 export const updateMenuState = (payload) => {

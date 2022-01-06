@@ -78,7 +78,7 @@ function App(props) {
                                 <Box sx={{ flexGrow: 1, zIndex: "55", marginBottom: "-5%"}}>
                                   <Grid container spacing={1} justifyContent={"center"} alignItems={"center"}>
                                     <Grid item xs={4}>
-                                      <Paper style={{background: "rgba(158, 155, 147, 0.9)", padding: "5%", paddingBottom: "3%", textAlign: "center"}} alignItems={"center"} justifyContent={"center"} elevation={4}>
+                                      <Paper style={{background: "rgba(158, 155, 147, 0.9)", padding: "5%", paddingBottom: "3%", textAlign: "center"}} elevation={4}>
                                         <img src={process.env.PUBLIC_URL + "/Assets/Images/personal_logo3.png"} style={{width: "100%", height: "100%"}}/>
                                       </Paper>
                                     </Grid>
@@ -100,7 +100,7 @@ function App(props) {
                                       </Paper>
                                     </Grid>
                                     <Grid item xs={4} />
-                                    <Grid item xs={4} alignItems={"center"} justifyContent={"center"} style={{textAlign: "center"}}>
+                                    <Grid item xs={4} style={{textAlign: "center"}}>
                                       <Button variant="outlined" endIcon={<ArrowForwardIosIcon />}
                                               style={{textTransform: "none"}}
                                               className={`enter-button ${classes.enterButton}`}
