@@ -18,7 +18,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
     return <Slide direction="up" ref={ref} {...props} />;
 });
 
-function BlackBerryOneDialog(props) {
+function WorkDialog(props) {
     const { showWorkDialog } = props;
 
     const handleClose = () => {
@@ -33,7 +33,7 @@ function BlackBerryOneDialog(props) {
                 onClose={handleClose}
                 TransitionComponent={Transition}
             >
-                <AppBar sx={{ position: 'relative' }}>
+                <AppBar sx={{ position: 'relative', backgroundColor: "#e3cfa1" }}>
                     <Toolbar>
                         <IconButton
                             edge="start"
@@ -46,9 +46,6 @@ function BlackBerryOneDialog(props) {
                         <Typography sx={{ ml: 2, flex: 1 }} variant="h6" component="div">
                             Sound
                         </Typography>
-                        <Button autoFocus color="inherit" onClick={handleClose}>
-                            save
-                        </Button>
                     </Toolbar>
                 </AppBar>
                 <List>
@@ -77,4 +74,4 @@ const mapDispatchToProps = {
     updateWorkDialogState,
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(BlackBerryOneDialog);
+export default connect(mapStateToProps, mapDispatchToProps)(WorkDialog);

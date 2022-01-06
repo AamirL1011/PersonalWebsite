@@ -8,7 +8,7 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from "@material-ui/core/Typography";
-import BlackBerryOneDialog from "../../../Components/ExperienceDialogs/BlackBerryOne";
+import WorkDialog from "../../../Components/ExperienceDialogs/WorkDialog";
 import CustomizedTimeline from "../../../Components/TimeLine/CustomizedTimeline";
 
 
@@ -105,7 +105,7 @@ function HomePage(props) {
                     <span style={{fontFamily: "Inter", fontWeight: "500", color: "rgba(0, 0, 0, 0.7)"}}>Projects</span>
                 </Typography>
             </Grid>
-            <BlackBerryOneDialog style={{zIndex: 99}} openDialog={true} />
+            <WorkDialog style={{zIndex: 99}} openDialog={true} />
         </Grid>
     )
 }
