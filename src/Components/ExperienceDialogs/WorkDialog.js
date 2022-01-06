@@ -60,7 +60,7 @@ function WorkDialog(props) {
                 onClose={handleClose}
                 TransitionComponent={Transition}
             >
-                <AppBar sx={{ position: 'fixed', backgroundColor: "#e3cfa1" }}>
+                <AppBar sx={{ position: 'fixed', backgroundColor: "rgba(227, 207, 161, 0.9)", backdropFilter: "blur(8px)" }}>
                     <Toolbar>
                         <IconButton
                             edge="start"
@@ -68,10 +68,10 @@ function WorkDialog(props) {
                             onClick={handleClose}
                             aria-label="close"
                         >
-                            <CloseIcon />
+                            <CloseIcon style={{color: "rgba(0, 0, 0, 0.7)"}} />
                         </IconButton>
                         <Typography sx={{ ml: 2, flex: 1 }} variant="h6" component="div">
-                            {job}
+                            <span style={{fontFamily: "Inter", fontWeight: "500", color: "rgba(0, 0, 0, 0.7)"}}>{job}</span>
                         </Typography>
                     </Toolbar>
                 </AppBar>

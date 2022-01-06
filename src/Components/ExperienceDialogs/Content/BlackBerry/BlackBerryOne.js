@@ -8,7 +8,7 @@ export default function BlackBerryOne(props) {
     return(
         <Grid container alignItems={"center"} justifyContent={"center"}>
             <Grid item xs={11} style={{textAlign: "center"}}>
-                <img src={process.env.PUBLIC_URL + './Assets/Images/blackberry.jpg'} width="430px" height="270px" style={{maxWidth: "100%"}} alt={"..."} />
+                <img src={process.env.PUBLIC_URL + './Assets/Images/blackberry.jpg'} width="430px" height="270px" style={{maxWidth: "100%", borderRadius: "10px"}} alt={"..."} />
             </Grid>
             <Grid item xs={11} style={{paddingTop: "10px"}}>
                 <Typography>
