@@ -34,7 +34,7 @@ function CustomizedTimeline(props) {
                 </TimelineSeparator>
                 <TimelineContent sx={{ py: '12px', px: 2 }}>
                     <TimelineButton
-                        job={"Blackberry QNX"}
+                        job={"BlackBerry QNX"}
                         title={"Software Integration Intern"}
                         date={"September 2018 - April 2019"}
                         imagePath={"bbryLogo.jpeg"}
@@ -59,7 +59,7 @@ function CustomizedTimeline(props) {
                 </TimelineSeparator>
                 <TimelineContent sx={{ py: '12px', px: 2 }}>
                     <TimelineButton
-                        job={"Blackberry QNX"}
+                        job={"BlackBerry QNX"}
                         title={"Software Testing Intern"}
                         date={"May 2019 - August 2019"}
                         imagePath={"bbryLogo.jpeg"}
