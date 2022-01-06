@@ -37,6 +37,12 @@
   }
 }
 
+.about {
+  /*
+  font-family: Inter, sans-serif !important;
+  */
+}
+
 video {
   position: absolute;
   right: 0;
