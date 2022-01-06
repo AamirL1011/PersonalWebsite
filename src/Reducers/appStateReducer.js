@@ -2,6 +2,7 @@ const initialState = {
     showMain: false,
     showSideBar: false,
     showWorkDialog: false,
+    workDialogType: "",
 };
 
 
@@ -24,6 +25,12 @@ const appStateReducer = (currentState = initialState, action) => {
             return {
                 ...newState,
                 showWorkDialog: action.payload,
+            }
+        }
+        case "SET_WORK_DIALOG_TYPE_STATE": {
+            return {
+                ...newState,
+                workDialogType: action.payload,
             }
         }
         default:

@@ -76,11 +76,18 @@ function HomePage(props) {
                             <strong style={{fontFamily: "Inter", color: "rgba(0, 0, 0, 0.7)", fontWeight: "500"}}>About me:</strong>
                         </Typography>
                         <Typography variant="body1">
-                            <span style={{fontFamily: "Inter", color: "rgba(0, 0, 0, 0.6)"}}>Nice to meet you! I'm a 4th year computer science student and full-stack developer based in Vancouver, Canada. I have previously completed a BSc in Biology, with a focus at the cellular level.
-                                I am goal driven, passionate about learning, and I love exploring new tools and technologies!</span>
+                            <span style={{fontFamily: "Inter", color: "rgba(0, 0, 0, 0.6)"}}>Nice to meet you!
+                                I'm a 4th year computer science student and full-stack developer based in Vancouver,
+                                Canada. I have previously completed a BSc in Biology, with a focus at the cellular level.
+                                I am goal driven, passionate about learning, and I love exploring new tools and technologies!
+                            </span>
                             <br/>
                             <br/>
-                            <span style={{fontFamily: "Inter", color: "rgba(0, 0, 0, 0.6)"}}>Feel free to check out my <a href={process.env.PUBLIC_URL + './Assets/Documents/resume.pdf'} download="resume.pdf" style={{color: "#9e5353"}}>resume</a>, my <a href="https://github.com/AamirL1011" style={{color: "#9e5353"}}>GitHub</a>, and contact me on <a href="https://www.linkedin.com/in/aamir-s/" style={{color: "#9e5353"}}>LinkedIn</a> if you have any questions!</span>
+                            <span style={{fontFamily: "Inter", color: "rgba(0, 0, 0, 0.6)"}}>Feel free to check
+                                out my <a href={process.env.PUBLIC_URL + './Assets/Documents/resume.pdf'} download="resume.pdf" style={{color: "#9e5353"}}>resume</a>,
+                                my <a href="https://github.com/AamirL1011" style={{color: "#9e5353"}}>GitHub</a>, and
+                                contact me on <a href="https://www.linkedin.com/in/aamir-s/" style={{color: "#9e5353"}}>LinkedIn</a> if you have any questions!
+                            </span>
                             <br />
                         </Typography>
                     </CardContent>

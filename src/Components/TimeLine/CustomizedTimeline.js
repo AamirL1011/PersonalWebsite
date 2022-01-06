@@ -36,6 +36,7 @@ function CustomizedTimeline(props) {
                     <TimelineButton
                         job={"Blackberry QNX"}
                         title={"Software Integration Intern"}
+                        date={"September 2018 - April 2019"}
                         imagePath={"bbryLogo.jpeg"}
                     />
                 </TimelineContent>
@@ -60,6 +61,7 @@ function CustomizedTimeline(props) {
                     <TimelineButton
                         job={"Blackberry QNX"}
                         title={"Software Testing Intern"}
+                        date={"May 2019 - August 2019"}
                         imagePath={"bbryLogo.jpeg"}
                     />
                 </TimelineContent>
@@ -84,6 +86,7 @@ function CustomizedTimeline(props) {
                     <TimelineButton
                         job={"UBC-AWS Cloud Innovation Centre"}
                         title={"Software Developer Intern"}
+                        date={"September 2020 - December 2020"}
                         imagePath={"ubcAws2.png"}
                     />
                 </TimelineContent>
@@ -108,6 +111,7 @@ function CustomizedTimeline(props) {
                     <TimelineButton
                         job={"UBC-AWS Cloud Innovation Centre"}
                         title={"Software Developer (part time)"}
+                        date={"January 2021 - August 2021"}
                         imagePath={"ubcAws2.png"}
                     />
                 </TimelineContent>
