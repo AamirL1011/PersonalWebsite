@@ -5,7 +5,7 @@ import ButtonBase from '@mui/material/ButtonBase';
 import Typography from '@mui/material/Typography';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
-import {CardMedia} from "@material-ui/core";
+import {CardMedia, Tooltip} from "@material-ui/core";
 import {updateWorkDialogState, updateWorkDialogTypeState} from "../../Actions/mainActions";
 import {connect} from "react-redux";
 
@@ -29,6 +29,9 @@ function TimelineButton(props) {
 
     return (
         <Box>
+            <Tooltip title={<React.Fragment>
+                <Typography variant={"body2"}>Click for details</Typography>
+            </React.Fragment>} placement="top">
             <TimeButton
                     focusRipple={true}
                     key={job}
@@ -55,6 +58,7 @@ function TimelineButton(props) {
                         </Box>
                     </Card>
                 </TimeButton>
+            </Tooltip>
         </Box>
     );
 }
