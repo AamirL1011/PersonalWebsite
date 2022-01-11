@@ -29,6 +29,27 @@ const actions = [
 
 function PageContainer(props) {
 
+    const handleDialAction = (actionName) => {
+        switch(actionName) {
+            case "Resume" :{
+                const link = document.createElement('a');
+                link.href = process.env.PUBLIC_URL + './Assets/Documents/resume.pdf';
+                link.setAttribute('download', `resume.pdf`);
+                document.body.appendChild(link);
+                link.click();
+                link.parentNode.removeChild(link);
+                break;
+            }
+            case "LinkedIn": {
+                break;
+            }
+            case "GitHub": {
+                break;
+            }
+            default:
+                break;
+        }
+    }
 
     return(
         <Grid container direction={"row"} justifyContent={"space-evenly"} alignItems={"center"} style={{backgroundColor: "#fff9eb", width: "100%", height: "100%"}}>
@@ -58,6 +79,7 @@ function PageContainer(props) {
                             icon={action.icon}
                             tooltipTitle={action.name}
                             tooltipOpen
+                            onClick={() => handleDialAction(action.name)}
                         />
                     ))}
                 </SpeedDial>

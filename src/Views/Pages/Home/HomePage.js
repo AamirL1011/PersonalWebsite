@@ -12,16 +12,6 @@ import WorkDialog from "../../../Components/ExperienceDialogs/WorkDialog";
 import CustomizedTimeline from "../../../Components/TimeLine/CustomizedTimeline";
 
 
-import SummarizeIcon from '@mui/icons-material/Summarize';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import GitHubIcon from '@mui/icons-material/GitHub';
-
-
-const actions = [
-    { icon: <LinkedInIcon />, name: 'LinkedIn' },
-    { icon: <GitHubIcon />, name: 'GitHub' },
-    { icon: <SummarizeIcon />, name: 'Resume' },
-];
 
 
 const useStyles = makeStyles((theme) => ({
