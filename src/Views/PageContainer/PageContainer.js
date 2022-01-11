@@ -41,9 +41,17 @@ function PageContainer(props) {
                 break;
             }
             case "LinkedIn": {
+                const link = document.createElement('a');
+                link.href = "https://www.linkedin.com/in/aamir-s/";
+                link.click();
+                link.parentNode.removeChild(link);
                 break;
             }
             case "GitHub": {
+                const link = document.createElement('a');
+                link.href = "https://github.com/AamirL1011";
+                link.click();
+                link.parentNode.removeChild(link);
                 break;
             }
             default:
