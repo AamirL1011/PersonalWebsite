@@ -53,7 +53,7 @@ function HomePage(props) {
         <Grid container item direction={"row"} justifyContent={"space-evenly"} alignItems={"center"} style={{backgroundColor: "#fff9eb"}}>
             <Grid item xs={10} sm={6} md={3} lg={1} xl={1}>
                 <Grid container direction={"row"} justifyContent={"space-evenly"} alignItems={"center"}>
-                    <Grid item >
+                    <Grid item xs={10} sm={12}>
                         <div className={"scrabbleBox"} style={{maxWidth: "150px"}}>
                             <span className="scrabble animate"><span style={{color: "black"}}>Hi</span></span>
                         </div>
