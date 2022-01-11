@@ -52,9 +52,13 @@ function HomePage(props) {
     return(
         <Grid container item direction={"row"} justifyContent={"space-evenly"} alignItems={"center"} style={{backgroundColor: "#fff9eb"}}>
             <Grid item xs={10} sm={6} md={3} lg={1} xl={1}>
-                <div className={"scrabbleBox"} style={{maxWidth: "150px"}}>
-                    <span className="scrabble animate"><span style={{color: "black"}}>Hi</span></span>
-                </div>
+                <Grid container direction={"row"} justifyContent={"space-evenly"} alignItems={"center"}>
+                    <Grid item >
+                        <div className={"scrabbleBox"} style={{maxWidth: "150px"}}>
+                            <span className="scrabble animate"><span style={{color: "black"}}>Hi</span></span>
+                        </div>
+                    </Grid>
+                </Grid>
             </Grid>
             <Grid item xs={12} sm={5} md={2} lg={1} xl={1} style={{textAlign: "center", paddingTop: "10px"}}>
                 <img className={"avatar"} src={process.env.PUBLIC_URL + './Assets/Images/bitmoji.png'} alt=""/>
