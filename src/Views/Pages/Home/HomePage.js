@@ -11,6 +11,7 @@ import CardContent from '@mui/material/CardContent';
 import Typography from "@material-ui/core/Typography";
 import WorkDialog from "../../../Components/ExperienceDialogs/WorkDialog";
 import CustomizedTimeline from "../../../Components/TimeLine/CustomizedTimeline";
+import {Divider} from "@material-ui/core";
 
 
 
@@ -92,10 +93,16 @@ function HomePage(props) {
                     </CardContent>
                 </Card>
             </Grid>
+            <Grid item xs={12} id={"experience"}>
+                <br/>
+            </Grid>
+            <Grid item xs={12} id={"experience"}>
+                <br/>
+            </Grid>
             <Grid item xs={12}>
                 <br/>
             </Grid>
-            <Grid item xs={12} style={{textAlign: "center", paddingTop: "15px", backgroundColor: "rgba(227, 207, 161, 1.00)" }} id={"experience"}>
+            <Grid item xs={12} style={{textAlign: "center", paddingTop: "15px", backgroundColor: "rgba(227, 207, 161, 1.00)" }}>
                 <Slide direction={"up"} triggerOnce={true}>
                     <Typography variant={"h5"}>
                         <span style={{fontFamily: "Inter", fontWeight: "500", color: "rgba(0, 0, 0, 0.7)"}}>Experience</span>
@@ -105,19 +112,22 @@ function HomePage(props) {
             <Grid item xs={12} style={{backgroundColor: "rgba(227, 207, 161, 1.00)"}}>
                 <CustomizedTimeline />
             </Grid>
-            <Grid container className={"projectHeaderWrap"} direction={"row"} justifyContent={"space-evenly"} alignItems={"flex-start"} item xs={12} style={{height:"100vh",
+            <Grid container item className={"projectHeaderWrap"} direction={"row"} justifyContent={"flex-start"} alignItems={"center"} xs={12} style={{height:"100vh",
                 backgroundImage: `linear-gradient(to left, rgba(163, 91, 57, 0.93), rgba(133, 36, 36, 0.73)), url(${projectImg})`,
             backgroundSize: "cover"}} id={"projects"}>
-                <Grid item xs={11} style={{textAlign: "center"}}>
-                    <Slide direction={"up"} triggerOnce={true}>
+                <Grid item xs={11} style={{paddingLeft: "20px"}}>
+                    <Slide direction={"up"}>
                         <Typography variant={"h5"} style={{zIndex: 10}}>
-                            <span style={{fontFamily: "Inter", fontWeight: "500", color: "rgb(240,240,240)"}}>Projects</span>
+                            <Slide direction={"left"}>
+                                <Divider variant="middle" style={{backgroundColor: "white", width: "137px", marginLeft: "2px"}} />
+                            </Slide>
+                            <span style={{fontFamily: "Inter", fontSize: "1.5em", fontWeight: "500", color: "rgb(240,240,240)"}}>Projects</span>
                         </Typography>
                     </Slide>
                 </Grid>
-                <Grid container item xs={11} style={{ backgroundColor: "rgba(250,2,213,0.5)", zIndex:2}}>
-
-                </Grid>
+            </Grid>
+            <Grid container item xs={10}>
+                <p></p>
             </Grid>
             <WorkDialog style={{zIndex: 99}} openDialog={true} />
         </Grid>
