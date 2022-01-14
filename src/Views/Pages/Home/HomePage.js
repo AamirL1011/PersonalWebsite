@@ -12,6 +12,9 @@ import Typography from "@material-ui/core/Typography";
 import WorkDialog from "../../../Components/ExperienceDialogs/WorkDialog";
 import CustomizedTimeline from "../../../Components/TimeLine/CustomizedTimeline";
 import {Divider} from "@material-ui/core";
+import Tabs from '@mui/material/Tabs';
+import Tab from '@mui/material/Tab';
+import Box from '@mui/material/Box';
 
 
 
@@ -47,6 +50,11 @@ function HomePage(props) {
     let navigate = useNavigate();
     let projectImg = process.env.PUBLIC_URL + './Assets/Images/projectMoment.jpg';
     const {showWorkDialog} = props;
+    const [tabValue, setTabValue] = React.useState('personal');
+
+    const handleTabChange = (event, newValue) => {
+        setTabValue(newValue);
+    };
     /*
         const desktop =  useMediaQuery("(min-width: 900px)");
     */
@@ -68,12 +76,12 @@ function HomePage(props) {
             <Grid item xs={10} style={{paddingTop: "15px"}} >
                 <Card sx={{ borderRadius: "10px", backgroundColor: "#fff9eb" }} elevation={0}>
                     <CardContent>
-                        <Slide direction={"up"} triggerOnce={true}>
+                        <Slide direction={"up"} >
                             <Typography variant={"h5"} gutterBottom>
                                 <strong style={{fontFamily: "Inter", color: "rgba(0, 0, 0, 0.7)", fontWeight: "500"}}>About me:</strong>
                             </Typography>
                         </Slide>
-                        <Slide direction={"up"} triggerOnce={true}>
+                        <Slide direction={"up"} >
                             <Typography variant="body1">
                             <span style={{fontFamily: "Inter", fontSize: "1.1em", color: "rgba(0, 0, 0, 0.6)"}}>Nice to meet you!
                                 I'm a 4th year computer science student and full-stack developer based in Vancouver,
@@ -103,7 +111,7 @@ function HomePage(props) {
                 <br/>
             </Grid>
             <Grid item xs={12} style={{textAlign: "center", paddingTop: "15px", backgroundColor: "rgba(227, 207, 161, 1.00)" }}>
-                <Slide direction={"up"} triggerOnce={true}>
+                <Slide direction={"up"}>
                     <Typography variant={"h5"}>
                         <span style={{fontFamily: "Inter", fontWeight: "500", color: "rgba(0, 0, 0, 0.7)"}}>Experience</span>
                     </Typography>
@@ -124,6 +132,32 @@ function HomePage(props) {
                             <span style={{fontFamily: "Inter", fontSize: "1.5em", fontWeight: "500", color: "rgb(240,240,240)"}}>Projects</span>
                         </Typography>
                     </Slide>
+                </Grid>
+            </Grid>
+            <Grid container item direction={"row"} xs={11} style={{marginTop: "-45px", minHeight: "100px" ,
+                backgroundColor: "lightgray", filter: "drop-shadow(0 0 0.05rem grey)"}}
+                  justifyContent={"space-evenly"} alignItems={"center"}>
+                <Grid item xs={12} style={{textAlign: "center", paddingTop: "30px"}}>
+                    <Typography variant={"h2"}>
+                        <span style={{fontSize: "0.80em"}}>Some cool things I've worked on</span>
+                    </Typography>
+                </Grid>
+                <Grid item xs={12} style={{textAlign: "center", paddingTop: "30px"}}>
+                    <Box sx={{ width: '100%' }}>
+                        <Tabs
+                            value={tabValue}
+                            onChange={handleTabChange}
+                            textColor={"inherit"}
+                            indicatorColor={"primary"}
+                            disableRipple={true}
+                            centerRipple={false}
+                            aria-label="secondary tabs example"
+                            centered
+                        >
+                            <Tab value="personal" label="Personal"/>
+                            <Tab value="other" label="Other" />
+                        </Tabs>
+                    </Box>
                 </Grid>
             </Grid>
             <Grid container item xs={10}>
