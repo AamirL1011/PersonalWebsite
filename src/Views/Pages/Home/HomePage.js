@@ -105,7 +105,8 @@ function HomePage(props) {
             <Grid item xs={12} style={{backgroundColor: "rgba(227, 207, 161, 1.00)"}}>
                 <CustomizedTimeline />
             </Grid>
-            <Grid container direction={"row"} justifyContent={"space-evenly"} alignItems={"flex-start"} item xs={10} style={{height:"100vh", backgroundImage: `url(${projectImg})`,
+            <Grid container className={"projectHeaderWrap"} direction={"row"} justifyContent={"space-evenly"} alignItems={"flex-start"} item xs={12} style={{height:"100vh",
+                backgroundImage: `linear-gradient(to left, rgba(163, 91, 57, 0.93), rgba(133, 36, 36, 0.73)), url(${projectImg})`,
             backgroundSize: "cover"}} id={"projects"}>
                 <Grid item xs={11} style={{textAlign: "center"}}>
                     <Slide direction={"up"} triggerOnce={true}>
