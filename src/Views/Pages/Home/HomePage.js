@@ -4,6 +4,7 @@ import { Route, Switch, useNavigate} from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import {updateMenuState, updateWorkDialogState} from "../../../Actions/mainActions";
 import { connect } from "react-redux";
+import { Fade, Slide } from "react-awesome-reveal";
 import useMediaQuery from '@mui/material/useMediaQuery';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
@@ -43,7 +44,7 @@ const useStyles = makeStyles((theme) => ({
 function HomePage(props) {
     const classes = useStyles();
     let navigate = useNavigate();
-
+    let projectImg = process.env.PUBLIC_URL + './Assets/Images/projectMoment.jpg';
     const {showWorkDialog} = props;
     /*
         const desktop =  useMediaQuery("(min-width: 900px)");
@@ -66,24 +67,28 @@ function HomePage(props) {
             <Grid item xs={10} style={{paddingTop: "15px"}} >
                 <Card sx={{ borderRadius: "10px", backgroundColor: "#fff9eb" }} elevation={0}>
                     <CardContent>
-                        <Typography variant={"h5"} gutterBottom>
-                            <strong style={{fontFamily: "Inter", color: "rgba(0, 0, 0, 0.7)", fontWeight: "500"}}>About me:</strong>
-                        </Typography>
-                        <Typography variant="body1">
-                            <span style={{fontFamily: "Inter", color: "rgba(0, 0, 0, 0.6)"}}>Nice to meet you!
+                        <Slide direction={"up"} triggerOnce={true}>
+                            <Typography variant={"h5"} gutterBottom>
+                                <strong style={{fontFamily: "Inter", color: "rgba(0, 0, 0, 0.7)", fontWeight: "500"}}>About me:</strong>
+                            </Typography>
+                        </Slide>
+                        <Slide direction={"up"} triggerOnce={true}>
+                            <Typography variant="body1">
+                            <span style={{fontFamily: "Inter", fontSize: "1.1em", color: "rgba(0, 0, 0, 0.6)"}}>Nice to meet you!
                                 I'm a 4th year computer science student and full-stack developer based in Vancouver,
                                 Canada. I have previously completed a BSc in Biology, with a focus at the cellular level.
                                 I am goal driven, passionate about learning, and I love exploring new tools and technologies!
                             </span>
-                            <br/>
-                            <br/>
-                            <span style={{fontFamily: "Inter", color: "rgba(0, 0, 0, 0.6)"}}>Feel free to check
+                                <br/>
+                                <br/>
+                                <span style={{fontFamily: "Inter", fontSize: "1.1em", color: "rgba(0, 0, 0, 0.6)"}}>Feel free to check
                                 out my <a href={process.env.PUBLIC_URL + './Assets/Documents/resume.pdf'} download="resume.pdf" style={{color: "#9e5353"}}>resume</a>,
                                 my <a href="https://github.com/AamirL1011" style={{color: "#9e5353"}}>GitHub</a>, and
                                 contact me on <a href="https://www.linkedin.com/in/aamir-s/" style={{color: "#9e5353"}}>LinkedIn</a> if you have any questions!
                             </span>
-                            <br />
-                        </Typography>
+                                <br />
+                            </Typography>
+                        </Slide>
                     </CardContent>
                 </Card>
             </Grid>
@@ -91,20 +96,27 @@ function HomePage(props) {
                 <br/>
             </Grid>
             <Grid item xs={12} style={{textAlign: "center", paddingTop: "15px", backgroundColor: "rgba(227, 207, 161, 1.00)" }} id={"experience"}>
-                <Typography variant={"h5"}>
-                    <span style={{fontFamily: "Inter", fontWeight: "500", color: "rgba(0, 0, 0, 0.7)"}}>Experience</span>
-                </Typography>
+                <Slide direction={"up"} triggerOnce={true}>
+                    <Typography variant={"h5"}>
+                        <span style={{fontFamily: "Inter", fontWeight: "500", color: "rgba(0, 0, 0, 0.7)"}}>Experience</span>
+                    </Typography>
+                </Slide>
             </Grid>
             <Grid item xs={12} style={{backgroundColor: "rgba(227, 207, 161, 1.00)"}}>
                 <CustomizedTimeline />
             </Grid>
-            <Grid item xs={12}>
-                <br/>
-            </Grid>
-            <Grid item xs={12} style={{textAlign: "center"}} id={"projects"}>
-                <Typography variant={"h5"}>
-                    <span style={{fontFamily: "Inter", fontWeight: "500", color: "rgba(0, 0, 0, 0.7)"}}>Projects</span>
-                </Typography>
+            <Grid container direction={"row"} justifyContent={"space-evenly"} alignItems={"flex-start"} item xs={10} style={{height:"100vh", backgroundImage: `url(${projectImg})`,
+            backgroundSize: "cover"}} id={"projects"}>
+                <Grid item xs={11} style={{textAlign: "center"}}>
+                    <Slide direction={"up"} triggerOnce={true}>
+                        <Typography variant={"h5"} style={{zIndex: 10}}>
+                            <span style={{fontFamily: "Inter", fontWeight: "500", color: "rgb(240,240,240)"}}>Projects</span>
+                        </Typography>
+                    </Slide>
+                </Grid>
+                <Grid container item xs={11} style={{ backgroundColor: "rgba(250,2,213,0.5)", zIndex:2}}>
+
+                </Grid>
             </Grid>
             <WorkDialog style={{zIndex: 99}} openDialog={true} />
         </Grid>

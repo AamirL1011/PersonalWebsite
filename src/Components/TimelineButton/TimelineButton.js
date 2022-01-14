@@ -41,7 +41,7 @@ function TimelineButton(props) {
                         <Box sx={{ display: 'flex', flexDirection: 'column' }}>
                             <CardMedia
                                 component="img"
-                                style={{ width: 50, height: "100%", maxHeight: 150 }}
+                                style={{ width: 50, maxWidth: "100%", height: "100%", maxHeight: 150 }}
                                 image={process.env.PUBLIC_URL + "/Assets/Images/" + imagePath}
                                 alt="..."
                             />

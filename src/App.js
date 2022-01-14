@@ -67,8 +67,8 @@ function App(props) {
               <Grid style={{height: "100vh"}}>
                 {
                     !mainState && (
-                        <Grid container justifyContent={"center"} alignItems={"center"} style={{backgroundColor: "lightgray", width: "100vw", height: "100vh"}}>
-                          <video playsInline autoPlay muted loop>
+                        <Grid container className={"splashPage"} justifyContent={"center"} alignItems={"center"} style={{backgroundColor: "lightgray", width: "100vw", height: "100vh"}}>
+                          <video className={"splashVid"} playsInline autoPlay muted loop>
                             <source src={process.env.PUBLIC_URL + "/Assets/Videos/video.mp4"} type="video/mp4" />
                           </video>
 
