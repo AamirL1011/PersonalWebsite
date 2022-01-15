@@ -63,17 +63,15 @@ function PageContainer(props) {
         <Grid container direction={"row"} justifyContent={"space-evenly"} alignItems={"center"} style={{backgroundColor: "#fff9eb", width: "100%", height: "100%"}}>
             <Navbar />
             <HomePage />
-            <Grid container item alignItems={"center"} justifyContent={"center"} style={{bottom: "0"}}>
-                <Box sx={{ flexGrow: 1 }}>
-                    <Grid container>
-                        <Grid item xs={12}>
-                            <Divider variant="middle"/>
-                        </Grid>
-                        <Grid item xs={12} style={{textAlign: "center"}}>
-                            ©2022 Created with ❤️ by Aamir Sheergar
+            <Grid container direction={"row"} item alignItems={"center"} justifyContent={"flex-start"} style={{bottom: "0", minHeight: "100px", backgroundColor: "rgba(56, 56, 56, 1.00)"}}>
+                    <Grid item xs={2} style={{paddingLeft: "20px"}}>
+                        <Grid container item xs={12}>
+                            <img src={process.env.PUBLIC_URL + "/Assets/Images/personal_logo3_transparent.png"} style={{maxHeight: "40px", maxWidth:"60px"}} alt="..."/>
                         </Grid>
                     </Grid>
-                </Box>
+                    <Grid item xs={10} style={{color :"whitesmoke"}}>
+                        ©2022 Created with ❤️ by Aamir Sheergar
+                    </Grid>
             </Grid>
             <Box sx={{ height: 320, transform: 'translateZ(0px)', position: "fixed", bottom: -50, right: 16, flexGrow: 1, zIndex: 56 }}>
                 <SpeedDial

@@ -11,7 +11,7 @@ import CardContent from '@mui/material/CardContent';
 import Typography from "@material-ui/core/Typography";
 import WorkDialog from "../../../Components/ExperienceDialogs/WorkDialog";
 import CustomizedTimeline from "../../../Components/TimeLine/CustomizedTimeline";
-import {Divider} from "@material-ui/core";
+import {CardMedia, Divider} from "@material-ui/core";
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
@@ -135,15 +135,18 @@ function HomePage(props) {
                 </Grid>
             </Grid>
             <Grid container item direction={"row"} xs={11} style={{marginTop: "-45px", minHeight: "100px" ,
-                backgroundColor: "lightgray", filter: "drop-shadow(0 0 0.05rem grey)"}}
+                backgroundColor: "#edebe6", filter: "drop-shadow(0 0 0.05rem #edebe6)"}}
                   justifyContent={"space-evenly"} alignItems={"center"}>
                 <Grid item xs={12} style={{textAlign: "center", paddingTop: "30px"}}>
                     <Typography variant={"h2"}>
                         <span style={{fontSize: "0.80em"}}>Some cool things I've worked on</span>
                     </Typography>
                 </Grid>
-                <Grid item xs={12} style={{textAlign: "center", paddingTop: "30px"}}>
-                    <Box sx={{ width: '100%' }}>
+                <Grid item xs={11} style={{textAlign: "center", paddingTop: "30px"}}>
+{/*
+                    <Divider variant={"middle"} style={{backgroundColor: "black"}} />
+*/}
+                    {/*<Box sx={{ width: '100%' }}>
                         <Tabs
                             value={tabValue}
                             onChange={handleTabChange}
@@ -157,11 +160,40 @@ function HomePage(props) {
                             <Tab value="personal" label="Personal"/>
                             <Tab value="other" label="Other" />
                         </Tabs>
-                    </Box>
+                    </Box>*/}
                 </Grid>
-            </Grid>
-            <Grid container item xs={10}>
-                <p></p>
+                <Grid container item xs={12} direction={"row"}
+                      justifyContent={"space-evenly"} alignItems={"center"}
+                style={{paddingTop: "30px", paddingBottom: "30px"}}>
+                    <Grid item xs={11} sm={5} md={5} style={{padding: "5px"}}>
+                        <Card sx={{ maxWidth: "100%" }} elevation={0}>
+                            <CardMedia
+                                component="img"
+                                min-height="200"
+                                min-width="250"
+                                image={process.env.PUBLIC_URL + './Assets/Images/mangodb_thumb.png'}
+                                alt="..."
+                            />
+                            <CardContent>
+                                VideoChat App Placeholder
+                            </CardContent>
+                        </Card>
+                    </Grid>
+                    <Grid item xs={11} sm={5} md={5} style={{padding: "5px"}}>
+                        <Card sx={{ maxWidth: "100%" }} elevation={0}>
+                            <CardMedia
+                                component="img"
+                                min-height="200"
+                                min-width="250"
+                                image={process.env.PUBLIC_URL + './Assets/Images/mangodb_thumb.png'}
+                                alt="..."
+                            />
+                            <CardContent>
+                                DoGether App
+                            </CardContent>
+                        </Card>
+                    </Grid>
+                </Grid>
             </Grid>
             <WorkDialog style={{zIndex: 99}} openDialog={true} />
         </Grid>
