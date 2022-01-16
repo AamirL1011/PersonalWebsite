@@ -11,6 +11,7 @@ import {connect} from "react-redux";
 import BlackBerryOne from "./Content/BlackBerry/BlackBerryOne";
 import BlackBerryTwo from "./Content/BlackBerry/BlackBerryTwo";
 import CICOne from "./Content/CIC/CICOne";
+import CICTwo from "./Content/CIC/CICTwo";
 import {useEffect, useState} from "react";
 
 const Transition = React.forwardRef(function Transition(props, ref) {
@@ -42,6 +43,7 @@ function WorkDialog(props) {
                 break;
             }
             case "January 2021 - August 2021": {
+                setContent(<CICTwo />);
                 setJob("UBC-AWS Cloud Innovation Centre");
                 break;
             }

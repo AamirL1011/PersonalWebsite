@@ -21,7 +21,7 @@ export default function CICTwo(props) {
                 <Fade triggerOnce={true}>
                     <Typography variant={"h5"}>
                         <span style={{fontFamily: "Inter", fontWeight: 500, fontSize: "1.0em"}}>
-                           Software Developer Intern
+                           Software Developer (Part Time)
                        </span>
                     </Typography>
                 </Fade>
@@ -35,8 +35,8 @@ export default function CICTwo(props) {
                         <Chip label="AWS" />
                         <Chip label="React" />
                         <Chip label="Git" />
-                        <Chip label="JavaScript" />
-                        <Chip label="Figma" />
+                        <Chip label="SMART on FHIR" />
+                        <Chip label="EMR Simulator" />
                     </Stack>
                 </Fade>
             </Grid>
@@ -48,10 +48,11 @@ export default function CICTwo(props) {
                     <Stack direction={{ xs: 'column', sm: 'row' }}
                            spacing={1}>
                         <Chip label="Full Stack Development" variant="outlined" />
-                        <Chip label="Serverless" variant="outlined" />
-                        <Chip label="API Integration" variant="outlined" />
-                        <Chip label="Microservices" variant="outlined" />
-                        <Chip label="Data Processing" variant="outlined" />
+                        <Chip label="FHIR Health Data" variant="outlined" />
+                        <Chip label="System Architecture" variant="outlined" />
+                        <Chip label="Data Visualization" variant="outlined" />
+                        <Chip label="Infrastructure As Code" variant="outlined" />
+                        <Chip label="Cloud Deployment Troubleshooting" variant="outlined" />
                     </Stack>
                 </Fade>
             </Grid>
@@ -65,7 +66,7 @@ export default function CICTwo(props) {
                         the <a style={{color: "#9e5353"}} href="https://www.ubc.ca/">University of British Columbia</a> with
                         the goal of creating novel cloud-native software solutions to address public sector pain points. I
                         had the opportunity to work with both team members from UBC and engineers from Amazon on various
-                        projects. All projects are published as open source. Overall, it was a great experience and
+                        projects. All projects are published as <a style={{color: "#9e5353"}} href={"https://cic.ubc.ca/projects/"}>open source</a>. Overall, it was a great experience and
                         I learned a lot!
                     </span>
                     </Typography>
