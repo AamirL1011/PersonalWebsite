@@ -81,28 +81,58 @@ export default function CICTwo(props) {
                     <br/>
                     <Typography>
                     <span  style={{fontFamily: "Inter", fontWeight: 300, fontSize: "1.1em"}}>
-                        During my time at the CIC, I worked on two healthcare related software solutions. During my internship,
-                        I worked on a prototype near real-time health monitoring platform for senior care homes which
-                        ingests sensor data (location and heart rate) from wearables and informs a central dashboard
-                        with an alert if any anomalies are found (no page refreshing required). I was responsible for
-                        developing the data schema for the entire project (leveraging GraphQL and DynamoDB), the frontend dashboard, and most of the backend data processing.
+                        While continuing with the CIC on a part time basis, I worked directly with key stakeholders to
+                        architect, design, and develop a prototype clinical decision support application that leverages the
+                        SMART on FHIR framework to interface with the newly implemented Electronic Medical Record (EMR) system at local
+                        hospitals. This was an exploratory exercise for the physicians involved to see what could be possible
+                        for future decision support applications. Since the neither the stakeholders nor the CIC have
+                        worked with EMRs in the past, this was new territory and required a lot of research and
+                        troubleshooting on my part.
                     </span>
                         <br/>
                         <br/>
                     </Typography>
-                        <Typography variant={"h6"}>
+                    <Typography >
+                        <span style={{fontFamily: "Inter", fontWeight: 300, fontSize: "1.1em"}}>
+                            The application utilizes the Fast Healthcare Interoperability Resources (FHIR)
+                        data standard and queries patient data (FHIR format) from the EMR. The data then gets filtered,
+                            classified and is then displayed visually on the dashboard as either a chart or an alert. More specifically,
+                            this application was designed to be used when a physician is prescribing antibiotics, so that
+                            they can easily look up the patient's vital data, lab results, allergies,
+                            and previously prescribed antibiotics in a format that is more intuitive.
+                        </span>
+                        <br/>
+                        <br/>
+                    </Typography>
+                </Fade>
+                <Fade triggerOnce={true}>
+                    <Typography variant={"h6"}>
                        <span style={{fontFamily: "Inter", fontWeight: 500, fontSize: "0.9em"}}>
-                           Platform Frontend
+                           Challenges
                        </span>
-                        </Typography>
+                    </Typography>
+                    <br/>
                     <Typography>
                         <span style={{fontFamily: "Inter", fontWeight: 300, fontSize: "1.1em"}}>
-                            As the customer planned on developing their own custom UI for their dashboard,
-                            we took an off-the-shelf React theme template and adapted it to accelerate the
-                            development timeline. I developed the business logic and backend integrations for the
-                            dashboard, as well as integrating Google Maps API to allow real-time tracking of patients
-                            that are displayed on maps. The dashboard also featured wearable device management, user
-                            management, geofence creation (for location breach alerts), and vital data visualization.
+                            Beyond learning how to interface with EMRs and how to handle/read/query FHIR data, one of
+                            major challenges was how to filter an antibiotic from the rest of the prescriptions. The
+                            prescription data is sometimes even written in abbreviations or short form which makes
+                            filtering a challenge. Sometimes but not always, prescriptions are accompanied with an
+                            RxNorm code that identifies the name and dosage of the medication as per US National Library
+                            of Medicine. Additionally, there are many alternative names for different
+                            antibiotics.
+                        </span>
+                        <br/>
+                        <br/>
+                        <span style={{fontFamily: "Inter", fontWeight: 300, fontSize: "1.1em"}}>
+                            With the current version of the FHIR standard (R4), there is no way
+                            to distinguish or manually classify a certain prescription as an antibiotic without
+                            medical experience. After brainstorming with the stakeholders and a couple failed solutions,
+                            I stumbled across the AWS Comprehend Medical Machine Learning service as a possible solution. More
+                            specifically, the RxNorm functionality provided by the service would help identify abbreviated
+                            prescriptions by identifying the full name of the medication and a corresponding RxNorm code.
+                            Next, after a lot of research and testing of third party medical APIs, I was finally able
+                            to come up with a process (shown below) to identify if a medication is an antibiotic.
                         </span>
                     </Typography>
                 </Fade>
@@ -110,48 +140,37 @@ export default function CICTwo(props) {
                 <br/>
             </Grid>
             <Grid container direction={"row"} item xs={11} style={{paddingTop: "10px", textAlign: "center"}}>
-                <Grid item xs={12} md={6}>
-                    <img src={process.env.PUBLIC_URL + "/Assets/Images/mhmp1.png"} style={{maxWidth: "400px"}} alt={"..."} />
-                </Grid>
-                <Grid item xs={12} md={6}>
-                    <img src={process.env.PUBLIC_URL + "/Assets/Images/mhmp2.png"} style={{maxWidth: "400px"}} alt="..."/>
+                <Grid item xs={12} md={12}>
+                    <img src={process.env.PUBLIC_URL + "/Assets/Images/medicationClassificationFlow.png"} style={{width: "500px", maxWidth: "100%"}} alt={"..."} />
                 </Grid>
                 <Grid item xs={12} md={12}>
-                    <img src={process.env.PUBLIC_URL + "/Assets/Images/mhmp3.png"} style={{maxWidth: "400px"}} alt="..."/>
+                    <img src={process.env.PUBLIC_URL + "/Assets/Images/fhir_app.png"} style={{width: "450px", maxWidth: "100%"}} alt="..."/>
                 </Grid>
             </Grid>
             <Grid item xs={11} style={{paddingTop: "10px"}}>
                 <Typography variant={"h6"}>
                        <span style={{fontFamily: "Inter", fontWeight: 500, fontSize: "0.9em"}}>
-                           Platform Backend
+                           Other Considerations
                        </span>
                 </Typography>
                 <br/>
                 <Typography>
                         <span style={{fontFamily: "Inter", fontWeight: 300, fontSize: "1.1em"}}>
-                            For the backend, we took a serverless microservices approach. As data is ingested from the
-                            wearables it is passed into the AWS Kinesis Data Stream, which then triggers
-                            AWS Lambda functions (microservices) to process the incoming data. We also set up a Data Lake in S3 to
-                            dump data for later data mining. Along with creating the project data schema which leveraged
-                            the GraphQL protocol and used AWS DynamoDB (NoSQL) for data storage, I implemented a few
-                            Lambda functions that perform a number of operations.
+                            Each EMR vendor has specific requirements for applications they will allow to
+                            interface with their systems. Such requirements may even encompass the look and feel of
+                            the UI. To that end, we ended up using Cerner's (EMR vendor) UI framework to build out the
+                            dashboard, while also following the same color scheme as the native EMR system to ensure a
+                            seamless user experience.
                         </span>
                     <br/>
                     <br/>
-                         <span style={{fontFamily: "Inter", fontWeight: 300, fontSize: "1.1em"}}>
-                            One service processes the incoming data, updates the patient's current vital data and
-                        status in DynamoDB, and generates gps location anomaly alerts if necessary. A second service I
-                             implemented is spun up periodically every five minutes to query each patient's hear rate
-                             data to check if an anomaly is present. We purposely took a naive approach to this as a
-                             developing a vital sign anomaly detection algorithm is out of scope and best left for
-                             medical experts. We included it only for example purposes, and end users must replace the
-                             algorithm. Finally, I implemented a service that checks for device activity to ensure all
-                             wearable devices are functioning and active as expected.
-                        </span>
                 </Typography>
-                <br/>
+            </Grid>
+            <Grid item xs={12} md={6} style={{textAlign: "center"}}>
+                <img src={process.env.PUBLIC_URL + "/Assets/Images/fhir_app2.png"} style={{width: "450px", maxWidth: "100%"}} alt="..."/>
             </Grid>
             <Grid item xs={11} style={{paddingTop: "10px"}}>
+                <br/>
                 <Typography variant={"h6"}>
                        <span style={{fontFamily: "Inter", fontWeight: 500, fontSize: "0.9em"}}>
                            Other Work
@@ -171,7 +190,7 @@ export default function CICTwo(props) {
                 </Typography>
             </Grid>
             <Grid item xs={11} style={{textAlign: "center"}}>
-                <img src={process.env.PUBLIC_URL + "/Assets/Images/cic_login.png"} style={{maxWidth: "400px"}} alt="..."/>
+                <img src={process.env.PUBLIC_URL + "/Assets/Images/text_app.png"} style={{maxWidth: "400px"}} alt="..."/>
                 <br/>
                 <br/>
             </Grid>
