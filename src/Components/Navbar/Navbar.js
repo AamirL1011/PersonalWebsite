@@ -137,10 +137,10 @@ function Navbar(props) {
                     </Typography>
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
                             <Button
-                                key={"home"}
+                                key={"about"}
                                 sx={{ my: 2, display: 'block' }}
                             >
-                                <span style={{color: "#9e5353"}}>Home</span>
+                                <span style={{color: "#9e5353"}}>About</span>
                             </Button>
                             <Button
                                 key={"experience"}

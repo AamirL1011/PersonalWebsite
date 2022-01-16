@@ -11,10 +11,12 @@ import CardContent from '@mui/material/CardContent';
 import Typography from "@material-ui/core/Typography";
 import WorkDialog from "../../../Components/ExperienceDialogs/WorkDialog";
 import CustomizedTimeline from "../../../Components/TimeLine/CustomizedTimeline";
-import {CardMedia, Divider} from "@material-ui/core";
+import {Button, CardActionArea, CardActions, CardMedia, Divider} from "@material-ui/core";
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
+import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+import IconButton from "@material-ui/core/IconButton";
 
 
 
@@ -52,6 +54,10 @@ function HomePage(props) {
     const {showWorkDialog} = props;
     const [tabValue, setTabValue] = React.useState('personal');
 
+    const handleTarget = (target) => {
+        console.log(target);
+    }
+
     const handleTabChange = (event, newValue) => {
         setTabValue(newValue);
     };
@@ -61,7 +67,8 @@ function HomePage(props) {
 
     return(
         <Grid container item direction={"row"} justifyContent={"space-evenly"} alignItems={"center"} style={{backgroundColor: "#fff9eb"}}>
-            <Grid item xs={10} sm={6} md={3} lg={1} xl={1}>
+            <Grid item xs={10} sm={6} md={3} lg={1} xl={1}
+            >
                 <Grid container direction={"row"} justifyContent={"space-evenly"} alignItems={"center"}>
                     <Grid item xs={10} sm={12}>
                         <div className={"scrabbleBox"} style={{maxWidth: "150px"}}>
@@ -110,10 +117,11 @@ function HomePage(props) {
             <Grid item xs={12}>
                 <br/>
             </Grid>
-            <Grid item xs={12} style={{textAlign: "center", paddingTop: "15px", backgroundColor: "rgba(227, 207, 161, 1.00)" }}>
+            <Grid item xs={12}
+                  style={{textAlign: "center", paddingTop: "15px", backgroundColor: "rgba(227, 207, 161, 1.00)" }}>
                 <Slide direction={"up"}>
                     <Typography variant={"h5"}>
-                        <span style={{fontFamily: "Inter", fontWeight: "500", color: "rgba(0, 0, 0, 0.7)"}}>Experience</span>
+                        <span style={{fontFamily: "Inter", fontWeight: "500", color: "rgba(0, 0, 0, 0.7)"}}>Work Experience</span>
                     </Typography>
                 </Slide>
             </Grid>
@@ -122,7 +130,8 @@ function HomePage(props) {
             </Grid>
             <Grid container item className={"projectHeaderWrap"} direction={"row"} justifyContent={"flex-start"} alignItems={"center"} xs={12} style={{height:"100vh",
                 backgroundImage: `linear-gradient(to left, rgba(163, 91, 57, 0.93), rgba(133, 36, 36, 0.73)), url(${projectImg})`,
-            backgroundSize: "cover"}} id={"projects"}>
+            backgroundSize: "cover"}} id={"projects"}
+                  >
                 <Grid item xs={11} style={{paddingLeft: "20px"}}>
                     <Slide direction={"up"}>
                         <Typography variant={"h5"} style={{zIndex: 10}}>
@@ -165,7 +174,7 @@ function HomePage(props) {
                 <Grid container item xs={12} direction={"row"}
                       justifyContent={"space-evenly"} alignItems={"center"}
                 style={{paddingTop: "30px", paddingBottom: "30px"}}>
-                    <Grid item xs={11} sm={5} md={5} style={{padding: "5px"}}>
+                    <Grid item xs={11} sm={5} md={5} style={{padding: "20px"}}>
                         <Card sx={{ maxWidth: "100%" }} elevation={0}>
                             <CardMedia
                                 component="img"
@@ -174,12 +183,39 @@ function HomePage(props) {
                                 image={process.env.PUBLIC_URL + './Assets/Images/mangodb_thumb.png'}
                                 alt="..."
                             />
+                            <CardActionArea>
                             <CardContent>
-                                VideoChat App Placeholder
+                                <Box sx={{flexGrow: 1}}>
+                                    <Grid container>
+                                        <Grid item xs={12}>
+                                            <Typography gutterBottom variant="h6" component="div">
+                                                <span style={{fontSize: "0.90em"}}>VideoChat App w/ Crypto Wallet</span>
+                                            </Typography>
+                                            <Typography variant={"body2"}>
+                                                <strong>Tech/Stack: </strong>Docker, Google Cloud Platform, WebRTC, Scikit-learn,
+                                                Terraform, React, Flask, Express, Web3, JWT
+                                            </Typography>
+                                        </Grid>
+                                        <Grid container item xs={12} direction={"row"}
+                                              justifyContent={"space-evenly"} alignItems={"flex-end"}
+                                        style={{marginBottom: "-15px"}}>
+                                            <Grid container item xs={12} style={{textAlign: "right"}}>
+                                                <Grid item xs={9} />
+                                                <Grid item xs={2}>
+                                                    <Typography variant={"body1"}>
+                                                    <span style={{color: "#53859e"}}>More</span>
+                                                   </Typography>
+                                                </Grid>
+                                                <Grid item xs={1}><ArrowForwardIosIcon style={{color: "#53859e"}} /></Grid>
+                                            </Grid>
+                                        </Grid>
+                                    </Grid>
+                                </Box>
                             </CardContent>
+                            </CardActionArea>
                         </Card>
                     </Grid>
-                    <Grid item xs={11} sm={5} md={5} style={{padding: "5px"}}>
+                    <Grid item xs={11} sm={5} md={5} style={{padding: "20px"}}>
                         <Card sx={{ maxWidth: "100%" }} elevation={0}>
                             <CardMedia
                                 component="img"
@@ -190,6 +226,34 @@ function HomePage(props) {
                             />
                             <CardContent>
                                 DoGether App
+                            </CardContent>
+                        </Card>
+                    </Grid>
+                    <Grid item xs={11} sm={5} md={5} style={{padding: "20px"}}>
+                        <Card sx={{ maxWidth: "100%" }} elevation={0}>
+                            <CardMedia
+                                component="img"
+                                min-height="200"
+                                min-width="250"
+                                image={process.env.PUBLIC_URL + './Assets/Images/sql_pages.png'}
+                                alt="..."
+                            />
+                            <CardContent>
+                                Database Admin Console
+                            </CardContent>
+                        </Card>
+                    </Grid>
+                    <Grid item xs={11} sm={5} md={5} style={{padding: "20px"}}>
+                        <Card sx={{ maxWidth: "100%" }} elevation={0}>
+                            <CardMedia
+                                component="img"
+                                min-height="200"
+                                min-width="250"
+                                image={process.env.PUBLIC_URL + './Assets/Images/campusExplorer_thumb.png'}
+                                alt="..."
+                            />
+                            <CardContent>
+                                Campus Explorer App
                             </CardContent>
                         </Card>
                     </Grid>

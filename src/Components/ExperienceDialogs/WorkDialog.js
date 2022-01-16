@@ -9,6 +9,8 @@ import Slide from '@mui/material/Slide';
 import {updateWorkDialogState} from "../../Actions/mainActions";
 import {connect} from "react-redux";
 import BlackBerryOne from "./Content/BlackBerry/BlackBerryOne";
+import BlackBerryTwo from "./Content/BlackBerry/BlackBerryTwo";
+import CICOne from "./Content/CIC/CICOne";
 import {useEffect, useState} from "react";
 
 const Transition = React.forwardRef(function Transition(props, ref) {
@@ -30,10 +32,12 @@ function WorkDialog(props) {
                 break;
             }
             case "May 2019 - August 2019": {
+                setContent(<BlackBerryTwo />);
                 setJob("BlackBerry QNX");
                 break;
             }
             case "September 2020 - December 2020": {
+                setContent(<CICOne />);
                 setJob("UBC-AWS Cloud Innovation Centre");
                 break;
             }

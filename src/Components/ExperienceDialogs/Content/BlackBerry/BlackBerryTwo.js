@@ -8,7 +8,7 @@ import { Fade, Slide } from "react-awesome-reveal";
 
 
 
-export default function BlackBerryOne(props) {
+export default function BlackBerryTwo(props) {
 
     const imgLink = process.env.PUBLIC_URL + './Assets/Images/blackberry_graphic.png';
     return(
@@ -22,7 +22,7 @@ export default function BlackBerryOne(props) {
                 <Fade triggerOnce={true}>
                     <Typography variant={"h5"}>
                         <span style={{fontFamily: "Inter", fontWeight: 500, fontSize: "1.0em"}}>
-                           Software Integration Intern
+                           Core OS - Software Testing Intern
                        </span>
                     </Typography>
                 </Fade>
@@ -33,11 +33,12 @@ export default function BlackBerryOne(props) {
                         Tools & Technologies:
                     </Typography>
                     <Stack direction={{ xs: 'column', sm: 'row' }} spacing={1}>
-                        <Chip label="QNX Momentics" />
-                        <Chip label="QNX RTOS" />
+                        <Chip label="QNX Hypervisor" />
+                        <Chip label="PyTest" />
+                        <Chip label="Python" />
                         <Chip label="JIRA" />
-                        <Chip label="VMware" />
-                        <Chip label="C Language" />
+                        <Chip label="Linux" />
+                        <Chip label="Embedded Systems" />
                     </Stack>
                 </Fade>
             </Grid>
@@ -48,11 +49,11 @@ export default function BlackBerryOne(props) {
                     </Typography>
                     <Stack direction={{ xs: 'column', sm: 'row' }}
                            spacing={1}>
-                        <Chip label="API integration" variant="outlined" />
-                        <Chip label="Customer consultation" variant="outlined" />
-                        <Chip label="Troubleshooting" variant="outlined" />
-                        <Chip label="Root-cause analysis" variant="outlined" />
-                        <Chip label="Open source licenses" variant="outlined" />
+                        <Chip label="Test Automation" variant="outlined" />
+                        <Chip label="Bash Scripting" variant="outlined" />
+                        <Chip label="Benchmark Testing" variant="outlined" />
+                        <Chip label="Documentation Creation" variant="outlined" />
+                        <Chip label="Agile Methodologies" variant="outlined" />
                     </Stack>
                 </Fade>
             </Grid>
@@ -64,7 +65,7 @@ export default function BlackBerryOne(props) {
                         specializes in enterprise security, offering solutions such as the <a style={{color: "#9e5353"}} href="https://en.wikipedia.org/wiki/Cylance">world's first</a> endpoint
                         security system to apply AI and Machine Learning for virus and malware detection.
 
-                        My first ever internship was at BlackBerry's <a style={{color: "#9e5353"}} href="https://blackberry.qnx.com/">QNX division</a>,
+                        My second internship was also at BlackBerry's <a style={{color: "#9e5353"}} href="https://blackberry.qnx.com/">QNX division</a>,
                     which develops a secure Unix-like RTOS and hypervisor (virtual machine) for safety-critical
                         applications such as driverless vehicles, aviation, and medical devices.
                     </span>
@@ -80,29 +81,11 @@ export default function BlackBerryOne(props) {
                     <br/>
                     <Typography>
                     <span  style={{fontFamily: "Inter", fontWeight: 300, fontSize: "1.1em"}}>
-                        My job was to assist customers with integrating the QNX operating system and virtual machines
-                        onto their embedded hardware platforms, as well as providing assistance to customers with regards to
-                        developing software specifically for the QNX OS (API integration and best practices). In
-                        addition, I conducted troubleshooting activities such as kernel tracing, memory analysis, and
-                        problem re-creation.
-                    </span>
-                    </Typography>
-                    <br/>
-                    <Typography>
-                    <span  style={{fontFamily: "Inter", fontWeight: 300, fontSize: "1.1em"}}>
-                        I also spent some time with QNX's legal department and helped them manually classify
-                        unknown open source licences for machine learning model training. I later created a presentation
-                        on open source licenses to my team discussing types of licenses and their
-                        legal ramifications for the company.
-                    </span>
-                    </Typography>
-                </Fade>
-                <br/>
-                <Fade triggerOnce={true}>
-                    <Typography >
-                    <span  style={{fontFamily: "Inter", fontWeight: 300, fontSize: "1.1em"}}>
-                        Overall, I learned a lot about operating systems and computer architecture, and
-                        I really enjoyed my time with the team!
+                        As part of the Core OS Test team, my job was to create automated stress tests for QNX's
+                        Hypervisor (virtual machine) that were compatible with multiple hardware platforms.
+                        These tests used to be performed manually. Additionally, I ran performance benchmarks on new
+                        Hypervisor builds and documented performance comparisons against older builds to find potential
+                        areas of defficiency. Overall, it was a great learning experience.
                     </span>
                     </Typography>
                 </Fade>
