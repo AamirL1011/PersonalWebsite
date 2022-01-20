@@ -19,6 +19,9 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 
 import HomePage from "../Pages/Home/HomePage";
 import {Divider} from "@material-ui/core";
+import Stack from "@mui/material/Stack";
+import Link from '@mui/material/Link';
+
 
 const actions = [
     { icon: <LinkedInIcon />, name: 'LinkedIn' },
@@ -69,9 +72,28 @@ function PageContainer(props) {
                             <img src={process.env.PUBLIC_URL + "/Assets/Images/personal_logo3_transparent.png"} style={{maxHeight: "40px", maxWidth:"60px"}} alt="..."/>
                         </Grid>
                     </Grid>
-                    <Grid item xs={9} md={10} style={{color :"whitesmoke", paddingLeft: "10px"}}>
+                    <Grid item xs={6} md={8} style={{color :"whitesmoke", paddingLeft: "10px"}}>
                         ©2022 Created with ❤️ by Aamir Sheergar
                     </Grid>
+                <Grid item xs={3} sm={2}>
+                    <Grid container direction={"row"} alignItems={"center"} justifyContent={"flex-start"}>
+                        <Grid item xs={1}>
+                            <br/>
+                            <Divider orientation={"vertical"} flexItem={true} style={{height: "60px", maxHeight: "100%", backgroundColor: "white"}} />
+                            <br/>
+                        </Grid>
+                        <Grid item xs={11}>
+                            <Stack
+                                direction="column"
+                                spacing={0}
+                            >
+                                <Link href="#" underline="none" style={{color: "white"}}>GitHub</Link>
+                                <Link href="#" underline="none" style={{color: "white"}}>LinkedIn</Link>
+                                <Link href="#" underline="none" style={{color: "white"}}>Resume</Link>
+                            </Stack>
+                        </Grid>
+                    </Grid>
+                </Grid>
             </Grid>
             <Box sx={{ height: 320, transform: 'translateZ(0px)', position: "fixed", bottom: -50, right: 16, flexGrow: 1, zIndex: 56 }}>
                 <SpeedDial

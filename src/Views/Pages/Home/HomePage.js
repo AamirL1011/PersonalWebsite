@@ -121,7 +121,7 @@ function HomePage(props) {
             style={{backgroundColor: "rgba(227, 207, 161, 1.00)", minHeight: "100px"}}
             >
                 <Grid container item direction={"row"} xs={10} style={{marginTop: "-100px", minHeight: "200px" ,
-                    backgroundColor: "#edebe6", filter: "drop-shadow(0 1px 0.05rem gray)", padding: "10px", borderRadius: "2px"}}
+                    backgroundColor: "#f1edd6", filter: "drop-shadow(0 1px 0.05rem gray)", padding: "10px", borderRadius: "2px"}}
                       justifyContent={"space-evenly"} alignItems={"center"}>
                     <Grid container direction={"row"} item xs={12} md={6} justifyContent={"space-evenly"}
                           alignItems={"center"}>
