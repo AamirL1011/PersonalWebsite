@@ -92,7 +92,7 @@ function App(props) {
                               </Grid>
 
                               <Grid container item className="GreetingBox">
-                                <Box sx={{ flexGrow: 1, background: "rgba(227, 207, 161, 0.7)", backdropFilter: "blur(3px)", padding: "3%", borderRadius: "10px", boxShadow: "0px 0.5px 1px grey" }}>
+                                <Box sx={{ flexGrow: 1, background: "rgba(227, 207, 161, 0.7)", backdropFilter: "blur(5px)", padding: "3%", borderRadius: "10px", boxShadow: "0px 0.5px 1px grey" }}>
                                   <Grid container spacing={2}>
                                       <Grid item xs={12}>
                                           <Grid container direction={"row"} justifyContent={"space-evenly"} alignItems={"center"} >

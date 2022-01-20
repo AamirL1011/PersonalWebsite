@@ -85,7 +85,8 @@ export default function BlackBerryTwo(props) {
                         Hypervisor (virtual machine) that were compatible with multiple hardware platforms.
                         These tests used to be performed manually. Additionally, I ran performance benchmarks on new
                         Hypervisor builds and documented performance comparisons against older builds to find potential
-                        areas of defficiency. Overall, it was a great learning experience.
+                        areas of defficiency. Overall, it was a great learning experience diving into an OS and learning
+                        more about virtual machine implementation!
                     </span>
                     </Typography>
                 </Fade>
