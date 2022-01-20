@@ -64,12 +64,12 @@ function PageContainer(props) {
             <Navbar />
             <HomePage />
             <Grid container direction={"row"} item alignItems={"center"} justifyContent={"flex-start"} style={{bottom: "0", minHeight: "100px", backgroundColor: "rgba(56, 56, 56, 1.00)"}}>
-                    <Grid item xs={2} style={{paddingLeft: "20px"}}>
+                    <Grid item xs={3} md={2} style={{paddingLeft: "20px"}}>
                         <Grid container item xs={12}>
                             <img src={process.env.PUBLIC_URL + "/Assets/Images/personal_logo3_transparent.png"} style={{maxHeight: "40px", maxWidth:"60px"}} alt="..."/>
                         </Grid>
                     </Grid>
-                    <Grid item xs={10} style={{color :"whitesmoke"}}>
+                    <Grid item xs={9} md={10} style={{color :"whitesmoke", paddingLeft: "10px"}}>
                         ©2022 Created with ❤️ by Aamir Sheergar
                     </Grid>
             </Grid>
