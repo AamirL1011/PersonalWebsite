@@ -72,7 +72,7 @@ function PageContainer(props) {
                             <img src={process.env.PUBLIC_URL + "/Assets/Images/personal_logo3_transparent.png"} style={{maxHeight: "40px", maxWidth:"60px"}} alt="..."/>
                         </Grid>
                     </Grid>
-                    <Grid item xs={6} md={8} style={{color :"whitesmoke", paddingLeft: "10px"}}>
+                    <Grid item xs={6} md={8} style={{color :"whitesmoke", paddingLeft: "10px", textAlign: "center"}}>
                         ©2022 Created with ❤️ by Aamir Sheergar
                     </Grid>
                 <Grid item xs={3} sm={2}>
@@ -87,9 +87,9 @@ function PageContainer(props) {
                                 direction="column"
                                 spacing={0}
                             >
-                                <Link href="#" underline="none" style={{color: "white"}}>GitHub</Link>
-                                <Link href="#" underline="none" style={{color: "white"}}>LinkedIn</Link>
-                                <Link href="#" underline="none" style={{color: "white"}}>Resume</Link>
+                                <Link href="https://github.com/AamirL1011" underline="none" style={{color: "white"}}>GitHub</Link>
+                                <Link href="https://www.linkedin.com/in/aamir-s/" underline="none" style={{color: "white"}}>LinkedIn</Link>
+                                <Link href="#" onClick={() => handleDialAction("Resume")} underline="none" style={{color: "white"}}>Resume</Link>
                             </Stack>
                         </Grid>
                     </Grid>
