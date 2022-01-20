@@ -4,7 +4,7 @@ import { Route, Switch, useNavigate} from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import {updateMenuState, updateWorkDialogState} from "../../../Actions/mainActions";
 import { connect } from "react-redux";
-import { Fade, Slide } from "react-awesome-reveal";
+import { Fade, Slide, Bounce } from "react-awesome-reveal";
 import useMediaQuery from '@mui/material/useMediaQuery';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
@@ -17,6 +17,7 @@ import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import IconButton from "@material-ui/core/IconButton";
+import AutoAwesomeMotionOutlinedIcon from '@mui/icons-material/AutoAwesomeMotionOutlined';
 
 
 
@@ -67,6 +68,11 @@ function HomePage(props) {
 
     return(
         <Grid container item direction={"row"} justifyContent={"space-evenly"} alignItems={"center"} style={{backgroundColor: "#fff9eb"}}>
+            <Grid item xs={12} id={"about"}>
+                <br/>
+                <br/>
+                <br/>
+            </Grid>
             <Grid item xs={10} sm={6} md={3} lg={1} xl={1}
             >
                 <Grid container direction={"row"} justifyContent={"space-evenly"} alignItems={"center"}>
@@ -85,7 +91,7 @@ function HomePage(props) {
                     <CardContent>
                         <Slide direction={"up"} >
                             <Typography variant={"h5"} gutterBottom>
-                                <strong style={{fontFamily: "Inter", color: "rgba(0, 0, 0, 0.7)", fontWeight: "500"}}>About me:</strong>
+                                <strong style={{fontFamily: "Inter", color: "rgba(0, 0, 0, 0.7)", fontWeight: "500", fontSize: "1.3em"}}>About me:</strong>
                             </Typography>
                         </Slide>
                         <Slide direction={"up"} >
@@ -108,25 +114,79 @@ function HomePage(props) {
                     </CardContent>
                 </Card>
             </Grid>
-            <Grid item xs={12} id={"experience"}>
+            <Grid item xs={12} style={{minHeight: "150px"}}>
                 <br/>
             </Grid>
-            <Grid item xs={12} id={"experience"}>
+            <Grid container item xs={12} direction={"row"} justifyContent={"space-evenly"} alignItems={"center"}
+            style={{backgroundColor: "rgba(227, 207, 161, 1.00)", minHeight: "100px"}}
+            >
+                <Grid container item direction={"row"} xs={10} style={{marginTop: "-100px", minHeight: "200px" ,
+                    backgroundColor: "#edebe6", filter: "drop-shadow(0 1px 0.05rem gray)", padding: "10px", borderRadius: "2px"}}
+                      justifyContent={"space-evenly"} alignItems={"center"}>
+                    <Grid container direction={"row"} item xs={12} md={6} justifyContent={"space-evenly"}
+                          alignItems={"center"}>
+                        <Slide direction={"down"} triggerOnce={true}>
+                            <Grid item xs={12} style={{textAlign: "center"}}>
+                                <img src={process.env.PUBLIC_URL + './Assets/Images/stack2.png'} alt="..."
+                                     style={{maxWidth: "100px"}}
+                                />
+                            </Grid>
+                        </Slide>
+                        <Grid item xs={10} style={{textAlign: "center"}}>
+                            <Typography>
+                                <span style={{fontFamily: "Inter", fontWeight: "500", fontSize: "20px"}}>Full Stack</span>
+                            </Typography>
+                            <Typography variant={"body2"}>
+                            <span>From customer support & consultation, testing, UI/frontend, backend, to cloud deployment. I
+                                have experience that encompasses every layer of the stack from start to finish and beyond.</span>
+                            </Typography>
+                        </Grid>
+                    </Grid>
+                    <Grid container direction={"row"} item xs={12} md={6} justifyContent={"space-evenly"}
+                          alignItems={"center"}>
+                        <Slide direction={"down"} triggerOnce={true}>
+                            <Grid item xs={12} style={{textAlign: "center"}}>
+                                <img src={process.env.PUBLIC_URL + './Assets/Images/fhir.png'} alt="..."
+                                     style={{width: "250px", maxWidth: "100%", minHeight: "90px"}}
+                                />
+                            </Grid>
+                        </Slide>
+                        <Grid item xs={10} style={{textAlign: "center"}}>
+                            <Typography>
+                                <span style={{fontFamily: "Inter", fontWeight: "500", fontSize: "20px"}}>FHIR Health Data</span>
+                            </Typography>
+                            <Typography variant={"body2"}>
+                            <span>Working with health data? I have experience with patient data in FHIR format and interfacing
+                                with SMART on FHIR compatible EMR systems.</span>
+                            </Typography>
+                        </Grid>
+                    </Grid>
+                </Grid>
+            </Grid>
+            <Grid item xs={12} id={"experience"}  style={{backgroundColor: "rgba(227, 207, 161, 1.00)"}}>
                 <br/>
             </Grid>
-            <Grid item xs={12}>
+            <Grid item xs={12} style={{backgroundColor: "rgba(227, 207, 161, 1.00)"}}>
+                <br/>
+            </Grid>
+            <Grid item xs={12} style={{backgroundColor: "rgba(227, 207, 161, 1.00)"}}>
                 <br/>
             </Grid>
             <Grid item xs={12}
-                  style={{textAlign: "center", paddingTop: "15px", backgroundColor: "rgba(227, 207, 161, 1.00)" }}>
+                  style={{textAlign: "center", paddingTop: "15px",  backgroundColor: "rgba(227, 207, 161, 1.00)" }}>
                 <Slide direction={"up"}>
                     <Typography variant={"h5"}>
-                        <span style={{fontFamily: "Inter", fontWeight: "500", color: "rgba(0, 0, 0, 0.7)"}}>Work Experience</span>
+                        <span style={{fontFamily: "Inter", fontSize: "1.5em", fontWeight: "500", color: "rgba(0, 0, 0, 0.7)"}}>Work Experience</span>
                     </Typography>
                 </Slide>
             </Grid>
             <Grid item xs={12} style={{backgroundColor: "rgba(227, 207, 161, 1.00)"}}>
                 <CustomizedTimeline />
+            </Grid>
+            <Grid item xs={12} style={{backgroundColor: "rgba(227, 207, 161, 1.00)"}}>
+                <br/>
+                <br/>
+                <br/>
             </Grid>
             <Grid container item className={"projectHeaderWrap"} direction={"row"} justifyContent={"flex-start"} alignItems={"center"} xs={12} style={{height:"100vh",
                 backgroundImage: `linear-gradient(to left, rgba(163, 91, 57, 0.93), rgba(133, 36, 36, 0.73)), url(${projectImg})`,

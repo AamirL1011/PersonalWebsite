@@ -51,8 +51,7 @@ export default function CICTwo(props) {
                         <Chip label="FHIR Health Data" variant="outlined" />
                         <Chip label="System Architecture" variant="outlined" />
                         <Chip label="Data Visualization" variant="outlined" />
-                        <Chip label="Infrastructure As Code" variant="outlined" />
-                        <Chip label="Cloud Deployment Troubleshooting" variant="outlined" />
+                        <Chip label="Cloud Deployment" variant="outlined" />
                     </Stack>
                 </Fade>
             </Grid>
@@ -178,12 +177,11 @@ export default function CICTwo(props) {
                 </Typography>
                 <Typography>
                         <span style={{fontFamily: "Inter", fontWeight: 300, fontSize: "1.1em"}}>
-                            During my internship, I also designed and developed a responsive
-                            React login page template from scratch which integrated AWS Cognito APIs for user authentication
-                            management. This login template was integrated into most CIC frontend projects in
-                            development. It included features such as the ability to easily switch between either a video,
-                            image, or static colour background, a light/dark theme setting, along with the ability to
-                            specify a different theme color.
+                            During my time at the CIC, I also worked on other projects doing things such as UI design
+                            and development (example shown below), infrastructure as code, and helping solve cloud
+                            deployment issues. I also created documentation to help with the onboarding process for new
+                            developers, and created a project checklist for the developers to go through at the end of
+                            each project.
                         </span>
                     <br/>
                     <br/>
