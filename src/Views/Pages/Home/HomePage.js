@@ -249,11 +249,11 @@ function HomePage(props) {
                                     <Grid container>
                                         <Grid item xs={12}>
                                             <Typography gutterBottom variant="h6" component="div">
-                                                <span style={{fontSize: "0.90em"}}>VideoChat App w/ Crypto Wallet</span>
+                                                <span style={{fontSize: "0.90em"}}>VideoChat App</span>
                                             </Typography>
                                             <Typography variant={"body2"}>
-                                                <strong>Tech/Stack: </strong>Docker, Google Cloud Platform, WebRTC, Scikit-learn,
-                                                Terraform, React, Flask, Express, Web3, JWT
+                                                <strong>Tech/Stack: </strong>Docker, Google Cloud Platform, WebRTC, Express,
+                                                Socket.IO, React
                                             </Typography>
                                         </Grid>
                                         <Grid container item xs={12} direction={"row"}
