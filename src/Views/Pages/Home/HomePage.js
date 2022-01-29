@@ -240,7 +240,7 @@ function HomePage(props) {
                                 component="img"
                                 min-height="200"
                                 min-width="250"
-                                image={process.env.PUBLIC_URL + './Assets/Images/mangodb_thumb.png'}
+                                image={process.env.PUBLIC_URL + './Assets/Images/wechatter_app2.png'}
                                 alt="..."
                             />
                             <CardActionArea>
@@ -249,11 +249,11 @@ function HomePage(props) {
                                     <Grid container>
                                         <Grid item xs={12}>
                                             <Typography gutterBottom variant="h6" component="div">
-                                                <span style={{fontSize: "0.90em"}}>VideoChat App</span>
+                                                <span style={{fontSize: "0.90em"}}>WeChatter Video Chat App</span>
                                             </Typography>
                                             <Typography variant={"body2"}>
                                                 <strong>Tech/Stack: </strong>Docker, Google Cloud Platform, WebRTC, Express,
-                                                Socket.IO, React
+                                                Socket.IO, Terraform, Auth0
                                             </Typography>
                                         </Grid>
                                         <Grid container item xs={12} direction={"row"}
@@ -284,9 +284,36 @@ function HomePage(props) {
                                 image={process.env.PUBLIC_URL + './Assets/Images/mangodb_thumb.png'}
                                 alt="..."
                             />
-                            <CardContent>
-                                DoGether App
-                            </CardContent>
+                            <CardActionArea>
+                                <CardContent>
+                                    <Box sx={{flexGrow: 1}}>
+                                        <Grid container>
+                                            <Grid item xs={12}>
+                                                <Typography gutterBottom variant="h6" component="div">
+                                                    <span style={{fontSize: "0.90em"}}>DoGether Social Todo App</span>
+                                                </Typography>
+                                                <Typography variant={"body2"}>
+                                                    <strong>Tech/Stack: </strong> React, Redux, Express, MongoDB, AWS (S3, Cloudfront),
+                                                    Heroku, Bootstrap
+                                                </Typography>
+                                            </Grid>
+                                            <Grid container item xs={12} direction={"row"}
+                                                  justifyContent={"space-evenly"} alignItems={"flex-end"}
+                                                  style={{marginBottom: "-15px"}}>
+                                                <Grid container item xs={12} style={{textAlign: "right"}}>
+                                                    <Grid item xs={9} />
+                                                    <Grid item xs={2}>
+                                                        <Typography variant={"body1"}>
+                                                            <span style={{color: "#53859e"}}>More</span>
+                                                        </Typography>
+                                                    </Grid>
+                                                    <Grid item xs={1}><ArrowForwardIosIcon style={{color: "#53859e"}} /></Grid>
+                                                </Grid>
+                                            </Grid>
+                                        </Grid>
+                                    </Box>
+                                </CardContent>
+                            </CardActionArea>
                         </Card>
                     </Grid>
                     <Grid item xs={11} sm={5} md={5} style={{padding: "20px"}}>
@@ -295,12 +322,38 @@ function HomePage(props) {
                                 component="img"
                                 min-height="200"
                                 min-width="250"
-                                image={process.env.PUBLIC_URL + './Assets/Images/sql_pages.png'}
+                                image={process.env.PUBLIC_URL + './Assets/Images/myPage.png'}
                                 alt="..."
                             />
-                            <CardContent>
-                                Database Admin Console
-                            </CardContent>
+                            <CardActionArea>
+                                <CardContent>
+                                    <Box sx={{flexGrow: 1}}>
+                                        <Grid container>
+                                            <Grid item xs={12}>
+                                                <Typography gutterBottom variant="h6" component="div">
+                                                    <span style={{fontSize: "0.90em"}}>Personal Portfolio Page</span>
+                                                </Typography>
+                                                <Typography variant={"body2"}>
+                                                    <strong>Tech/Stack: </strong> React, Material-UI
+                                                </Typography>
+                                            </Grid>
+                                            <Grid container item xs={12} direction={"row"}
+                                                  justifyContent={"space-evenly"} alignItems={"flex-end"}
+                                                  style={{marginBottom: "-15px"}}>
+                                                <Grid container item xs={12} style={{textAlign: "right"}}>
+                                                    <Grid item xs={9} />
+                                                    <Grid item xs={2}>
+                                                        <Typography variant={"body1"}>
+                                                            <span style={{color: "#53859e"}}>More</span>
+                                                        </Typography>
+                                                    </Grid>
+                                                    <Grid item xs={1}><ArrowForwardIosIcon style={{color: "#53859e"}} /></Grid>
+                                                </Grid>
+                                            </Grid>
+                                        </Grid>
+                                    </Box>
+                                </CardContent>
+                            </CardActionArea>
                         </Card>
                     </Grid>
                     <Grid item xs={11} sm={5} md={5} style={{padding: "20px"}}>
@@ -312,9 +365,101 @@ function HomePage(props) {
                                 image={process.env.PUBLIC_URL + './Assets/Images/campusExplorer_thumb.png'}
                                 alt="..."
                             />
-                            <CardContent>
-                                Campus Explorer App
-                            </CardContent>
+                            <CardActionArea>
+                                <CardContent>
+                                    <Box sx={{flexGrow: 1}}>
+                                        <Grid container>
+                                            <Grid item xs={12}>
+                                                <Typography gutterBottom variant="h6" component="div">
+                                                    <span style={{fontSize: "0.90em"}}>Campus Course Explorer App</span>
+                                                </Typography>
+                                                <Typography variant={"body2"}>
+                                                    <strong>Tech/Stack: </strong> TypeScript, NodeJS, Mocha, Chai, Restify
+                                                </Typography>
+                                            </Grid>
+                                            <Grid container item xs={12} direction={"row"}
+                                                  justifyContent={"space-evenly"} alignItems={"flex-end"}
+                                                  style={{marginBottom: "-15px"}}>
+                                                <Grid container item xs={12} style={{textAlign: "right"}}>
+                                                    <Grid item xs={9} />
+                                                    <Grid item xs={2}>
+                                                        <Typography variant={"body1"}>
+                                                            <span style={{color: "#53859e"}}>More</span>
+                                                        </Typography>
+                                                    </Grid>
+                                                    <Grid item xs={1}><ArrowForwardIosIcon style={{color: "#53859e"}} /></Grid>
+                                                </Grid>
+                                            </Grid>
+                                        </Grid>
+                                    </Box>
+                                </CardContent>
+                            </CardActionArea>
+                        </Card>
+                    </Grid>
+                    <Grid item xs={11} sm={5} md={5} style={{padding: "20px"}}>
+                        <Card sx={{ maxWidth: "100%" }} elevation={0}>
+                            <CardActionArea>
+                                <CardContent>
+                                    <Box sx={{flexGrow: 1}}>
+                                        <Grid container>
+                                            <Grid item xs={12}>
+                                                <Typography gutterBottom variant="h6" component="div">
+                                                    <span style={{fontSize: "0.90em"}}>SQL Database Admin Console</span>
+                                                </Typography>
+                                                <Typography variant={"body2"}>
+                                                    <strong>Tech/Stack: </strong> MySQL, Apache Server, PHP
+                                                </Typography>
+                                            </Grid>
+                                            <Grid container item xs={12} direction={"row"}
+                                                  justifyContent={"space-evenly"} alignItems={"flex-end"}
+                                                  style={{marginBottom: "-15px"}}>
+                                                <Grid container item xs={12} style={{textAlign: "right"}}>
+                                                    <Grid item xs={9} />
+                                                    <Grid item xs={2}>
+                                                        <Typography variant={"body1"}>
+                                                            <span style={{color: "#53859e"}}>More</span>
+                                                        </Typography>
+                                                    </Grid>
+                                                    <Grid item xs={1}><ArrowForwardIosIcon style={{color: "#53859e"}} /></Grid>
+                                                </Grid>
+                                            </Grid>
+                                        </Grid>
+                                    </Box>
+                                </CardContent>
+                            </CardActionArea>
+                        </Card>
+                    </Grid>
+                    <Grid item xs={11} sm={5} md={5} style={{padding: "20px"}}>
+                        <Card sx={{ maxWidth: "100%" }} elevation={0}>
+                            <CardActionArea>
+                                <CardContent>
+                                    <Box sx={{flexGrow: 1}}>
+                                        <Grid container>
+                                            <Grid item xs={12}>
+                                                <Typography gutterBottom variant="h6" component="div">
+                                                    <span style={{fontSize: "0.90em"}}>Bus Transit Android App</span>
+                                                </Typography>
+                                                <Typography variant={"body2"}>
+                                                    <strong>Tech/Stack: </strong> Java, Android Studio, Genymotion, JUnit
+                                                </Typography>
+                                            </Grid>
+                                            <Grid container item xs={12} direction={"row"}
+                                                  justifyContent={"space-evenly"} alignItems={"flex-end"}
+                                                  style={{marginBottom: "-15px"}}>
+                                                <Grid container item xs={12} style={{textAlign: "right"}}>
+                                                    <Grid item xs={9} />
+                                                    <Grid item xs={2}>
+                                                        <Typography variant={"body1"}>
+                                                            <span style={{color: "#53859e"}}>More</span>
+                                                        </Typography>
+                                                    </Grid>
+                                                    <Grid item xs={1}><ArrowForwardIosIcon style={{color: "#53859e"}} /></Grid>
+                                                </Grid>
+                                            </Grid>
+                                        </Grid>
+                                    </Box>
+                                </CardContent>
+                            </CardActionArea>
                         </Card>
                     </Grid>
                 </Grid>
