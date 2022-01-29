@@ -20,6 +20,20 @@ export const updateWorkDialogTypeState = (payload) => {
     }
 }
 
+// Open or close project dialog state
+export const updateProjectDialogState = (payload) => {
+    return (dispatch) => {
+        dispatch({ type: "SET_PROJECT_DIALOG_STATE", payload: payload });
+    }
+}
+
+// Update project dialog type
+export const updateProjectDialogTypeState = (payload) => {
+    return (dispatch) => {
+        dispatch({type: "SET_PROJECT_DIALOG_TYPE_STATE", payload: payload});
+    }
+}
+
 // ===================================---CHANGE SIDE MENU STATE---=======================================
 // Updates the sidebar menu state of the application
 export const updateMenuState = (payload) => {

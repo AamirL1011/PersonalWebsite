@@ -3,6 +3,8 @@ const initialState = {
     showSideBar: false,
     showWorkDialog: false,
     workDialogType: "",
+    showProjectDialog: false,
+    projectDialogType: "",
 };
 
 
@@ -31,6 +33,18 @@ const appStateReducer = (currentState = initialState, action) => {
             return {
                 ...newState,
                 workDialogType: action.payload,
+            }
+        }
+        case "SET_PROJECT_DIALOG_STATE": {
+            return {
+                ...newState,
+                showProjectDialog: action.payload,
+            }
+        }
+        case "SET_PROJECT_DIALOG_TYPE_STATE": {
+            return {
+                ...newState,
+                projectDialogType: action.payload,
             }
         }
         default:

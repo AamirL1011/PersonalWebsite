@@ -2,7 +2,7 @@ import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import { Route, Switch, useNavigate} from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
-import {updateMenuState, updateWorkDialogState} from "../../../Actions/mainActions";
+import {updateMenuState, updateProjectDialogState, updateWorkDialogState, updateProjectDialogTypeState} from "../../../Actions/mainActions";
 import { connect } from "react-redux";
 import { Fade, Slide, Bounce } from "react-awesome-reveal";
 import useMediaQuery from '@mui/material/useMediaQuery';
@@ -10,6 +10,7 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from "@material-ui/core/Typography";
 import WorkDialog from "../../../Components/ExperienceDialogs/WorkDialog";
+import ProjectDialog from "../../../Components/ProjectDialogs/ProjectDialog";
 import CustomizedTimeline from "../../../Components/TimeLine/CustomizedTimeline";
 import {Button, CardActionArea, CardActions, CardMedia, Divider} from "@material-ui/core";
 import Tabs from '@mui/material/Tabs';
@@ -52,8 +53,14 @@ function HomePage(props) {
     const classes = useStyles();
     let navigate = useNavigate();
     let projectImg = process.env.PUBLIC_URL + './Assets/Images/projectMoment.jpg';
-    const {showWorkDialog} = props;
     const [tabValue, setTabValue] = React.useState('personal');
+
+    const handleOpenProject = (type) => {
+        const {updateProjectDialogTypeState, updateProjectDialogState} = props;
+
+        updateProjectDialogTypeState(type);
+        updateProjectDialogState(true);
+    }
 
     const handleTarget = (target) => {
         console.log(target);
@@ -243,13 +250,15 @@ function HomePage(props) {
                                 image={process.env.PUBLIC_URL + './Assets/Images/wechatter_app2.png'}
                                 alt="..."
                             />
-                            <CardActionArea>
+                            <CardActionArea
+                            onClick={() => handleOpenProject("wechatter")}
+                            >
                             <CardContent>
                                 <Box sx={{flexGrow: 1}}>
                                     <Grid container>
                                         <Grid item xs={12}>
                                             <Typography gutterBottom variant="h6" component="div">
-                                                <span style={{fontSize: "0.90em"}}>WeChatter Video Chat App</span>
+                                                <span style={{fontSize: "0.90em"}}>WeChatter Video Chat App (Beta)</span>
                                             </Typography>
                                             <Typography variant={"body2"}>
                                                 <strong>Tech/Stack: </strong>Docker, Google Cloud Platform, WebRTC, Express,
@@ -294,7 +303,7 @@ function HomePage(props) {
                                                 </Typography>
                                                 <Typography variant={"body2"}>
                                                     <strong>Tech/Stack: </strong> React, Redux, Express, MongoDB, AWS (S3, Cloudfront),
-                                                    Heroku, Bootstrap
+                                                    Heroku, ESLint, Bootstrap
                                                 </Typography>
                                             </Grid>
                                             <Grid container item xs={12} direction={"row"}
@@ -334,7 +343,7 @@ function HomePage(props) {
                                                     <span style={{fontSize: "0.90em"}}>Personal Portfolio Page</span>
                                                 </Typography>
                                                 <Typography variant={"body2"}>
-                                                    <strong>Tech/Stack: </strong> React, Material-UI
+                                                    <strong>Tech/Stack: </strong> React, Material-UI, Cloudflare, AWS Route 53
                                                 </Typography>
                                             </Grid>
                                             <Grid container item xs={12} direction={"row"}
@@ -462,16 +471,82 @@ function HomePage(props) {
                             </CardActionArea>
                         </Card>
                     </Grid>
+                    <Grid item xs={11} sm={5} md={5} style={{padding: "20px"}}>
+                        <Card sx={{ maxWidth: "100%" }} elevation={0}>
+                            <CardActionArea>
+                                <CardContent>
+                                    <Box sx={{flexGrow: 1}}>
+                                        <Grid container>
+                                            <Grid item xs={12}>
+                                                <Typography gutterBottom variant="h6" component="div">
+                                                    <span style={{fontSize: "0.90em"}}>SMTP Email Server</span>
+                                                </Typography>
+                                                <Typography variant={"body2"}>
+                                                    <strong>Tech/Stack: </strong> C Language
+                                                </Typography>
+                                            </Grid>
+                                            <Grid container item xs={12} direction={"row"}
+                                                  justifyContent={"space-evenly"} alignItems={"flex-end"}
+                                                  style={{marginBottom: "-15px"}}>
+                                                <Grid container item xs={12} style={{textAlign: "right"}}>
+                                                    <Grid item xs={9} />
+                                                    <Grid item xs={2}>
+                                                        <Typography variant={"body1"}>
+                                                            <span style={{color: "#53859e"}}>More</span>
+                                                        </Typography>
+                                                    </Grid>
+                                                    <Grid item xs={1}><ArrowForwardIosIcon style={{color: "#53859e"}} /></Grid>
+                                                </Grid>
+                                            </Grid>
+                                        </Grid>
+                                    </Box>
+                                </CardContent>
+                            </CardActionArea>
+                        </Card>
+                    </Grid>
+                    <Grid item xs={11} sm={5} md={5} style={{padding: "20px"}}>
+                        <Card sx={{ maxWidth: "100%" }} elevation={0}>
+                            <CardActionArea>
+                                <CardContent>
+                                    <Box sx={{flexGrow: 1}}>
+                                        <Grid container>
+                                            <Grid item xs={12}>
+                                                <Typography gutterBottom variant="h6" component="div">
+                                                    <span style={{fontSize: "0.90em"}}>DNS Lookup Service</span>
+                                                </Typography>
+                                                <Typography variant={"body2"}>
+                                                    <strong>Tech/Stack: </strong> Java
+                                                </Typography>
+                                            </Grid>
+                                            <Grid container item xs={12} direction={"row"}
+                                                  justifyContent={"space-evenly"} alignItems={"flex-end"}
+                                                  style={{marginBottom: "-15px"}}>
+                                                <Grid container item xs={12} style={{textAlign: "right"}}>
+                                                    <Grid item xs={9} />
+                                                    <Grid item xs={2}>
+                                                        <Typography variant={"body1"}>
+                                                            <span style={{color: "#53859e"}}>More</span>
+                                                        </Typography>
+                                                    </Grid>
+                                                    <Grid item xs={1}><ArrowForwardIosIcon style={{color: "#53859e"}} /></Grid>
+                                                </Grid>
+                                            </Grid>
+                                        </Grid>
+                                    </Box>
+                                </CardContent>
+                            </CardActionArea>
+                        </Card>
+                    </Grid>
                 </Grid>
             </Grid>
             <WorkDialog style={{zIndex: 99}} openDialog={true} />
+            <ProjectDialog style={{zIndex: 99}} />
         </Grid>
     )
 }
 
 const mapStateToProps = (state) => {
     return {
-        menuEnabled: state.appState.showSideBar,
         showWorkDialog: state.appState.showWorkDialog,
     };
 };
@@ -479,6 +554,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = {
     updateMenuState,
     updateWorkDialogState,
+    updateProjectDialogState,
+    updateProjectDialogTypeState,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(HomePage);
