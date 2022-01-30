@@ -2,7 +2,6 @@ import './App.css';
 import Grid from '@material-ui/core/Grid';
 import {StylesProvider, ThemeProvider} from '@material-ui/core/styles';
 import PageContainer from "./Views/PageContainer/PageContainer";
-import { BrowserRouter } from 'react-router-dom';
 import React, {useState, useEffect} from "react";
 import { connect } from "react-redux";
 import {updateMainState} from "./Actions/mainActions";
@@ -72,14 +71,14 @@ function App(props) {
                     !mainState && (
                         <Grid container className={"splashPage"} justifyContent={"center"} alignItems={"center"} style={{backgroundColor: "lightgray", width: "100vw", height: "100vh"}}>
                           <video className={"splashVid"} playsInline autoPlay muted loop>
-                            <source src={process.env.PUBLIC_URL + "/Assets/Videos/video.mp4"} type="video/mp4" />
+                            <source src={process.env.PUBLIC_URL + "/Assets/Videos/video.mp4"} type="video/mp4"  alt={""} />
                           </video>
 
                           <Grid container item xs={11} sm={7} md={5} lg={5} xl={4} style={{zIndex: "50"}} justifyContent={"center"} alignItems={"center"}>
                             <Grid container item justifyContent={"center"} alignItems={"center"} >
                               <Grid container item>
                                 <Box sx={{ flexGrow: 1, zIndex: "55", marginBottom: "5%"}}>
-                                    <Fade delay={1000} triggerOnce={true}>
+                                    <Fade delay={500} triggerOnce={true}>
                                         <Grid container spacing={1} justifyContent={"center"} alignItems={"center"}>
                                             <Grid item xs={4}>
                                                 <Paper style={{background: "rgba(158, 155, 147, 0.9)", padding: "5%", paddingBottom: "3%", textAlign: "center"}} elevation={4}>
@@ -148,9 +147,7 @@ function App(props) {
                 }
                 {
                     mainState && (
-                        <BrowserRouter>
                           <PageContainer />
-                        </BrowserRouter>
                     )
                 }
               </Grid>

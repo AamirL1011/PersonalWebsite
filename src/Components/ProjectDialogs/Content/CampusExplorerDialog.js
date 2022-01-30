@@ -9,7 +9,7 @@ function CampusExplorerDialog() {
     return(<DialogContent dividers>
         <Grid container direction={"row"} justifyContent={"center"} alignItems={"center"}>
             <Grid item xs={11}>
-                <img src={process.env.PUBLIC_URL + './Assets/Images/campusExplorer.png'} style={{maxWidth: "100%"}}  />
+                <img src={process.env.PUBLIC_URL + './Assets/Images/campusExplorer.png'} style={{maxWidth: "100%"}} alt={""} />
             </Grid>
             <Grid item xs={11} style={{textAlign: "start"}}>
                 <Typography variant={"body1"}>

@@ -10,7 +10,7 @@ function PersonalPageDialog() {
     return(<DialogContent dividers>
         <Grid container direction={"row"} justifyContent={"center"} alignItems={"center"}>
             <Grid item xs={11}>
-                <img src={process.env.PUBLIC_URL + './Assets/Images/myPage2.png'} style={{maxWidth: "100%"}}  />
+                <img src={process.env.PUBLIC_URL + './Assets/Images/myPage2.png'} style={{maxWidth: "100%"}}  alt={""} />
             </Grid>
             <Grid item xs={11}>
                 <Typography variant={"h6"}>

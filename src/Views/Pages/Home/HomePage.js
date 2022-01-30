@@ -1,10 +1,9 @@
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
-import { Route, Switch, useNavigate} from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import {updateMenuState, updateProjectDialogState, updateWorkDialogState, updateProjectDialogTypeState} from "../../../Actions/mainActions";
 import { connect } from "react-redux";
-import { Fade, Slide, Bounce } from "react-awesome-reveal";
+import { Slide} from "react-awesome-reveal";
 import useMediaQuery from '@mui/material/useMediaQuery';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
@@ -12,13 +11,9 @@ import Typography from "@material-ui/core/Typography";
 import WorkDialog from "../../../Components/ExperienceDialogs/WorkDialog";
 import ProjectDialog from "../../../Components/ProjectDialogs/ProjectDialog";
 import CustomizedTimeline from "../../../Components/TimeLine/CustomizedTimeline";
-import {Button, CardActionArea, CardActions, CardMedia, Divider} from "@material-ui/core";
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
+import { CardActionArea, CardMedia, Divider} from "@material-ui/core";
 import Box from '@mui/material/Box';
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
-import IconButton from "@material-ui/core/IconButton";
-import AutoAwesomeMotionOutlinedIcon from '@mui/icons-material/AutoAwesomeMotionOutlined';
 
 
 
@@ -51,9 +46,7 @@ const useStyles = makeStyles((theme) => ({
 
 function HomePage(props) {
     const classes = useStyles();
-    let navigate = useNavigate();
     let projectImg = process.env.PUBLIC_URL + './Assets/Images/projectMoment.jpg';
-    const [tabValue, setTabValue] = React.useState('personal');
 
     const handleOpenProject = (type) => {
         const {updateProjectDialogTypeState, updateProjectDialogState} = props;
@@ -62,13 +55,7 @@ function HomePage(props) {
         updateProjectDialogState(true);
     }
 
-    const handleTarget = (target) => {
-        console.log(target);
-    }
 
-    const handleTabChange = (event, newValue) => {
-        setTabValue(newValue);
-    };
     /*
         const desktop =  useMediaQuery("(min-width: 900px)");
     */
@@ -219,24 +206,6 @@ function HomePage(props) {
                     </Typography>
                 </Grid>
                 <Grid item xs={11} style={{textAlign: "center", paddingTop: "30px"}}>
-{/*
-                    <Divider variant={"middle"} style={{backgroundColor: "black"}} />
-*/}
-                    {/*<Box sx={{ width: '100%' }}>
-                        <Tabs
-                            value={tabValue}
-                            onChange={handleTabChange}
-                            textColor={"inherit"}
-                            indicatorColor={"primary"}
-                            disableRipple={true}
-                            centerRipple={false}
-                            aria-label="secondary tabs example"
-                            centered
-                        >
-                            <Tab value="personal" label="Personal"/>
-                            <Tab value="other" label="Other" />
-                        </Tabs>
-                    </Box>*/}
                 </Grid>
                 <Grid container item xs={12} direction={"row"}
                       justifyContent={"space-evenly"} alignItems={"center"}

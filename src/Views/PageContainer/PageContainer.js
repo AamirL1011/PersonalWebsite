@@ -1,12 +1,9 @@
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
-import { Route, Switch, useNavigate} from 'react-router-dom';
 import {updateMenuState} from "../../Actions/mainActions";
 import Navbar from "../../Components/Navbar/Navbar";
 import { connect } from "react-redux";
 import Box from "@mui/material/Box";
-
-
 
 
 

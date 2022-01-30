@@ -1,17 +1,13 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { useTheme } from '@material-ui/core/styles';
-import { useNavigate } from 'react-router-dom';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
-import MenuIcon from '@material-ui/icons/Menu';
 import IconButton from '@material-ui/core/IconButton';
-import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
-import AccountBoxIcon from '@material-ui/icons/AccountBox';
 import MoreIcon from '@material-ui/icons/MoreVert';
 import Backdrop from '@material-ui/core/Backdrop';
 import CircularProgress from '@material-ui/core/CircularProgress';
@@ -66,17 +62,14 @@ function Navbar(props) {
     const {updateMenuState, menuEnabled} = props;
     const classes = useStyles();
     const theme = useTheme();
-    let navigate = useNavigate();
 
 
     const [loadingBackdrop, setLoadingBackdrop] = React.useState(false);
 
 
 
-    const [anchorEl, setAnchorEl] = React.useState(null);
     const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
-    const isMenuOpen = Boolean(anchorEl);
     const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
 
 
@@ -92,19 +85,6 @@ function Navbar(props) {
         setMobileMoreAnchorEl(event.currentTarget);
     };
 
-    const menuId = 'primary-search-account-menu';
-    const renderMenu = (
-        <Menu
-            anchorEl={anchorEl}
-            anchorOrigin={{ vertical: 'top', horizontal: 'left' }}
-            id={menuId}
-            keepMounted
-            transformOrigin={{ vertical: 'top', horizontal: 'left' }}
-            open={isMenuOpen}
-        >
-            <MenuItem><span>Logout  </span></MenuItem>
-        </Menu>
-    );
 
     const mobileMenuId = 'primary-search-account-menu-mobile';
     const renderMobileMenu = (
@@ -117,10 +97,33 @@ function Navbar(props) {
             open={isMobileMenuOpen}
             onClose={handleMobileMenuClose}
         >
-            <MenuItem disabled>
-                <AccountBoxIcon /><Typography variant={"subtitle1"} noWrap></Typography>
+            <MenuItem>
+                <Button
+                    key={"about"}
+                    sx={{ my: 2, display: 'block' }}
+                    href={"#about"}
+                >
+                    <span style={{color: "#9e5353"}}>About</span>
+                </Button>
             </MenuItem>
-            <MenuItem><span>Logout  </span><ExitToAppIcon color={"secondary"}/></MenuItem>
+            <MenuItem>
+                <Button
+                    key={"experience"}
+                    sx={{ my: 2, display: 'block' }}
+                    href={"#experience"}
+                >
+                    <span style={{color: "#9e5353"}}>Experience</span>
+                </Button>
+            </MenuItem>
+            <MenuItem>
+                <Button
+                    key={"projects"}
+                    sx={{ my: 2, display: 'block' }}
+                    href={"#projects"}
+                >
+                    <span style={{color: "#9e5353"}}>Projects</span>
+                </Button>
+            </MenuItem>
 
         </Menu>
     );
@@ -173,7 +176,6 @@ function Navbar(props) {
                             <MoreIcon />
                         </IconButton>
                         {renderMobileMenu}
-                        {renderMenu}
                     </div>
                 </Toolbar>
             </AppBar>
