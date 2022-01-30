@@ -80,7 +80,7 @@ function HomePage(props) {
                 <br/>
                 <br/>
             </Grid>
-            <Grid item xs={10} sm={6} md={3} lg={1} xl={1}
+            <Grid item xs={10} sm={6} md={6} lg={4} xl={2}
             >
                 <Grid container direction={"row"} justifyContent={"space-evenly"} alignItems={"center"}>
                     <Grid item xs={10} sm={12}>
@@ -90,7 +90,7 @@ function HomePage(props) {
                     </Grid>
                 </Grid>
             </Grid>
-            <Grid item xs={12} sm={5} md={2} lg={1} xl={1} style={{textAlign: "center", paddingTop: "10px"}}>
+            <Grid item xs={12} sm={5} md={5} lg={4} xl={2} style={{textAlign: "center", paddingTop: "10px"}}>
                 <img className={"avatar"} src={process.env.PUBLIC_URL + './Assets/Images/bitmoji.png'} alt=""/>
             </Grid>
             <Grid item xs={10} style={{paddingTop: "15px"}} >
@@ -124,13 +124,13 @@ function HomePage(props) {
             <Grid item xs={12} style={{minHeight: "150px"}}>
                 <br/>
             </Grid>
-            <Grid container item xs={12} direction={"row"} justifyContent={"space-evenly"} alignItems={"center"}
+            <Grid container item xs={12}  direction={"row"} justifyContent={"space-evenly"} alignItems={"center"}
             style={{backgroundColor: "rgba(227, 207, 161, 1.00)", minHeight: "100px"}}
             >
-                <Grid container item direction={"row"} xs={10} style={{marginTop: "-100px", minHeight: "200px" ,
+                <Grid container item direction={"row"} xs={10} xl={6} style={{marginTop: "-100px", minHeight: "200px" ,
                     backgroundColor: "#f1edd6", filter: "drop-shadow(0 1px 0.05rem gray)", padding: "10px", borderRadius: "2px"}}
                       justifyContent={"space-evenly"} alignItems={"center"}>
-                    <Grid container direction={"row"} item xs={12} md={6} justifyContent={"space-evenly"}
+                    <Grid container direction={"row"} item xs={12} md={6} xl={5} justifyContent={"space-evenly"}
                           alignItems={"center"}>
                         <Slide direction={"down"} triggerOnce={true}>
                             <Grid item xs={12} style={{textAlign: "center"}}>
@@ -149,7 +149,7 @@ function HomePage(props) {
                             </Typography>
                         </Grid>
                     </Grid>
-                    <Grid container direction={"row"} item xs={12} md={6} justifyContent={"space-evenly"}
+                    <Grid container direction={"row"} item xs={12} md={6} xl={5} justifyContent={"space-evenly"}
                           alignItems={"center"}>
                         <Slide direction={"down"} triggerOnce={true}>
                             <Grid item xs={12} style={{textAlign: "center"}}>
@@ -258,7 +258,7 @@ function HomePage(props) {
                                     <Grid container>
                                         <Grid item xs={12}>
                                             <Typography gutterBottom variant="h6" component="div">
-                                                <span style={{fontSize: "0.90em"}}>WeChatter Video Chat App (Beta)</span>
+                                                <span style={{fontSize: "0.90em"}}>WeChatter Video Chat App (beta)</span>
                                             </Typography>
                                             <Typography variant={"body2"}>
                                                 <strong>Tech/Stack: </strong>Docker, Google Cloud Platform, WebRTC, Express,
@@ -293,7 +293,7 @@ function HomePage(props) {
                                 image={process.env.PUBLIC_URL + './Assets/Images/mangodb_thumb.png'}
                                 alt="..."
                             />
-                            <CardActionArea>
+                            <CardActionArea onClick={() => handleOpenProject("dogether")}>
                                 <CardContent>
                                     <Box sx={{flexGrow: 1}}>
                                         <Grid container>
@@ -334,7 +334,7 @@ function HomePage(props) {
                                 image={process.env.PUBLIC_URL + './Assets/Images/myPage.png'}
                                 alt="..."
                             />
-                            <CardActionArea>
+                            <CardActionArea onClick={() => handleOpenProject("personal")}>
                                 <CardContent>
                                     <Box sx={{flexGrow: 1}}>
                                         <Grid container>
@@ -374,7 +374,7 @@ function HomePage(props) {
                                 image={process.env.PUBLIC_URL + './Assets/Images/campusExplorer_thumb.png'}
                                 alt="..."
                             />
-                            <CardActionArea>
+                            <CardActionArea onClick={() => handleOpenProject("campus")}>
                                 <CardContent>
                                     <Box sx={{flexGrow: 1}}>
                                         <Grid container>
@@ -407,7 +407,7 @@ function HomePage(props) {
                     </Grid>
                     <Grid item xs={11} sm={5} md={5} style={{padding: "20px"}}>
                         <Card sx={{ maxWidth: "100%" }} elevation={0}>
-                            <CardActionArea>
+                            <CardActionArea onClick={() => handleOpenProject("database")}>
                                 <CardContent>
                                     <Box sx={{flexGrow: 1}}>
                                         <Grid container>
@@ -440,7 +440,7 @@ function HomePage(props) {
                     </Grid>
                     <Grid item xs={11} sm={5} md={5} style={{padding: "20px"}}>
                         <Card sx={{ maxWidth: "100%" }} elevation={0}>
-                            <CardActionArea>
+                            <CardActionArea onClick={() => handleOpenProject("bus")}>
                                 <CardContent>
                                     <Box sx={{flexGrow: 1}}>
                                         <Grid container>
@@ -473,7 +473,7 @@ function HomePage(props) {
                     </Grid>
                     <Grid item xs={11} sm={5} md={5} style={{padding: "20px"}}>
                         <Card sx={{ maxWidth: "100%" }} elevation={0}>
-                            <CardActionArea>
+                            <CardActionArea onClick={() => handleOpenProject("smtp")}>
                                 <CardContent>
                                     <Box sx={{flexGrow: 1}}>
                                         <Grid container>
@@ -506,13 +506,13 @@ function HomePage(props) {
                     </Grid>
                     <Grid item xs={11} sm={5} md={5} style={{padding: "20px"}}>
                         <Card sx={{ maxWidth: "100%" }} elevation={0}>
-                            <CardActionArea>
+                            <CardActionArea onClick={() => handleOpenProject("dns")}>
                                 <CardContent>
                                     <Box sx={{flexGrow: 1}}>
                                         <Grid container>
                                             <Grid item xs={12}>
                                                 <Typography gutterBottom variant="h6" component="div">
-                                                    <span style={{fontSize: "0.90em"}}>DNS Lookup Service</span>
+                                                    <span style={{fontSize: "0.90em"}}>DNS Resolver</span>
                                                 </Typography>
                                                 <Typography variant={"body2"}>
                                                     <strong>Tech/Stack: </strong> Java
